@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
     // This allows the build to succeed even if there are ESLint warnings/errors
     ignoreDuringBuilds: true,
   },
+  output: "export",
   /* other config options here */
 };
 
