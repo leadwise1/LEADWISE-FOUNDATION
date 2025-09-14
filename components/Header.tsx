@@ -3,8 +3,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import Head from 'next/head'
-
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false)
 
@@ -87,6 +86,7 @@ const Header: React.FC = () => {
           </div>
         </nav>
       </header>
+      <SpeedInsights />
     </>
   )
 }
