@@ -57,7 +57,7 @@ const CallToAction: React.FC = () => {
             </div>
 
             <h2 className="font-Cardo text-4xl lg:text-5xl xl:text-6xl font-semibold mb-6 leading-tight">
-              Your Gift Today Opens Doors For Tomorrw’s Leaders
+              Your Gift Today Opens Doors For Tomorrow’s Leaders
             </h2>
 
             <p className="font-Amoresa text-lg lg:text-xl font-light leading-relaxed mb-8 text-cream/90">

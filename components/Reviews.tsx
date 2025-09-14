@@ -85,6 +85,20 @@ const Reviews: React.FC = () => {
 
   return (
     <section id="reviews" className="bg-cream py-20">
+      <style>{`
+        @keyframes fade-in {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+          animation: fade-in 0.5s forwards;
+        }
+        .active-review {
+          transform: scale(1.05);
+          box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+      `}</style>
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="font-oswald text-4xl lg:text-5xl font-bold mb-6 text-navy">
@@ -97,7 +111,7 @@ const Reviews: React.FC = () => {
 
         <div className="relative max-w-5xl mx-auto">
           {/* Main Review Display */}
-          <div className="bg-gradient-to-br from-navy to-navy/90 text-cream rounded-3xl p-8 lg:p-12 shadow-xl border border-peach/20 relative overflow-hidden">
+          <div className={`bg-gradient-to-br from-navy to-navy/90 text-cream rounded-3xl p-8 lg:p-12 shadow-xl border border-peach/20 relative overflow-hidden ${currentIndex !== null ? 'active-review' : ''}`}>
             <div className="absolute top-6 left-6 text-cream/10">
               <Quote size={60} />
             </div>
@@ -116,7 +130,13 @@ const Reviews: React.FC = () => {
                   <div className="mb-6">
                     <div className="flex mb-3">
                       {[...Array(reviews[currentIndex].rating)].map((_, i) => (
-                         <span key={i} className="text-yellow-400 text-xl">★</span>
+                         <span 
+                           key={i} 
+                           className="text-yellow-400 text-xl animate-fade-in" 
+                           style={{animationDelay: `${i * 0.1}s`}}
+                         >
+                           ★
+                         </span>
                         ))}
                     </div>
                     <blockquote className="font-oswald text-lg lg:text-xl text-cream/90 leading-relaxed font-light italic">
@@ -172,23 +192,24 @@ const Reviews: React.FC = () => {
         </div>
 
         {/* Trust Indicators */}
-        <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-        <div className="bg-gradient-to-br from-navy to-navy/90 text-cream rounded-xl p-6 shadow-lg">
+        <div className="mt-16 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          <div className="bg-gradient-to-br from-navy to-navy/90 text-cream rounded-xl p-6 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:from-peach hover:to-peach/80 cursor-pointer">
             <div className="font-cinzel text-2xl font-bold text-peach mb-2">4.9/5</div>
             <div className="font-oswald text-cream/80 text-sm uppercase tracking-wide">Average Rating</div>
           </div>
-          <div className="bg-gradient-to-br from-navy to-navy/90 text-cream rounded-xl p-6 shadow-lg">
+          <div className="bg-gradient-to-br from-navy to-navy/90 text-cream rounded-xl p-6 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:from-peach hover:to-peach/80 cursor-pointer">
             <div className="font-cinzel text-2xl font-bold text-peach mb-2">98%</div>
             <div className="font-oswald text-cream/80 text-sm uppercase tracking-wide">Recommend Us</div>
           </div>
-          <div className="bg-gradient-to-br from-navy to-navy/90 text-cream rounded-xl p-6 shadow-lg">
-            <div className="font-cinzel text-2xl font-bold text-peach mb-2">500+</div>
+          <div className="bg-gradient-to-br from-navy to-navy/90 text-cream rounded-xl p-6 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:from-peach hover:to-peach/80 cursor-pointer" title="Programs have consistently delivered above average growth for participants over 1 year">
+            <div className="font-cinzel text-2xl font-bold text-peach mb-2">1+ Years</div>
+            <div className="font-oswald text-cream/80 text-sm uppercase tracking-wide">Above Average Growth</div>
+          </div>
+          <div className="bg-gradient-to-br from-navy to-navy/90 text-cream rounded-xl p-6 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:from-peach hover:to-peach/80 cursor-pointer">
+            <div className="font-cinzel text-2xl font-bold text-peach mb-2">15+</div>
             <div className="font-oswald text-cream/80 text-sm uppercase tracking-wide">Success Stories</div>
           </div>
-          <div className="bg-gradient-to-br from-navy to-navy/90 text-cream rounded-xl p-6 shadow-lg">
-            <div className="font-cinzel text-2xl font-bold text-peach mb-2">3 Years</div>
-            <div className="font-oswald text-cream/80 text-sm uppercase tracking-wide">Average Growth</div>
-          </div>
+          <p className="text-cream/70 text-sm mt-2 col-span-full text-center">Stats reflect programs and impact since launch in 2024.</p>
         </div>
       </div>
     </section>

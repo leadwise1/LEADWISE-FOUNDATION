@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
               underrepresented leaders in technology, education, and
               beyond. We dismantle barriers, provide mentorship and
               career coaching, and create pathways for leadership
-              equity and systemic change
+              equity and systemic change.
             </h3>
             <button
               onClick={handleDonateClick}
