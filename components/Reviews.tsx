@@ -98,6 +98,18 @@ const Reviews: React.FC = () => {
           box-shadow: 0 10px 25px rgba(0,0,0,0.1);
           transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+        @keyframes star-bounce {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-5px);
+          }
+        }
+        .animate-star {
+          animation: fade-in 0.5s forwards, star-bounce 1s ease-in-out infinite;
+          display: inline-block;
+        }
       `}</style>
       <div className="container-custom">
         <div className="text-center mb-16">
@@ -132,8 +144,8 @@ const Reviews: React.FC = () => {
                       {[...Array(reviews[currentIndex].rating)].map((_, i) => (
                          <span 
                            key={i} 
-                           className="text-yellow-400 text-xl animate-fade-in" 
-                           style={{animationDelay: `${i * 0.1}s`}}
+                           className="text-yellow-400 text-xl animate-star" 
+                           style={{animationDelay: `${i * 0.15}s`}}
                          >
                            ★
                          </span>
@@ -193,21 +205,21 @@ const Reviews: React.FC = () => {
 
         {/* Trust Indicators */}
         <div className="mt-16 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-          <div className="bg-gradient-to-br from-navy to-navy/90 text-cream rounded-xl p-6 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:from-peach hover:to-peach/80 cursor-pointer">
-            <div className="font-cinzel text-2xl font-bold text-peach mb-2">4.9/5</div>
-            <div className="font-oswald text-cream/80 text-sm uppercase tracking-wide">Average Rating</div>
+          <div className="bg-gradient-to-br from-navy to-navy/90 text-cream rounded-xl p-6 shadow-lg transform transition-transform duration-300 hover:bg-gradient-to-br hover:from-peach hover:to-peach/80 hover:text-navy cursor-pointer">
+            <div className="font-cinzel text-2xl font-bold mb-2">4.9/5</div>
+            <div className="font-oswald text-sm uppercase tracking-wide">Average Rating</div>
           </div>
-          <div className="bg-gradient-to-br from-navy to-navy/90 text-cream rounded-xl p-6 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:from-peach hover:to-peach/80 cursor-pointer">
-            <div className="font-cinzel text-2xl font-bold text-peach mb-2">98%</div>
-            <div className="font-oswald text-cream/80 text-sm uppercase tracking-wide">Recommend Us</div>
+          <div className="bg-gradient-to-br from-navy to-navy/90 text-cream rounded-xl p-6 shadow-lg transform transition-transform duration-300 hover:bg-gradient-to-br hover:from-peach hover:to-peach/80 hover:text-navy cursor-pointer">
+            <div className="font-cinzel text-2xl font-bold mb-2">98%</div>
+            <div className="font-oswald text-sm uppercase tracking-wide">Recommend Us</div>
           </div>
-          <div className="bg-gradient-to-br from-navy to-navy/90 text-cream rounded-xl p-6 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:from-peach hover:to-peach/80 cursor-pointer" title="Programs have consistently delivered above average growth for participants over 1 year">
-            <div className="font-cinzel text-2xl font-bold text-peach mb-2">1+ Years</div>
-            <div className="font-oswald text-cream/80 text-sm uppercase tracking-wide">Above Average Growth</div>
+          <div className="bg-gradient-to-br from-navy to-navy/90 text-cream rounded-xl p-6 shadow-lg transform transition-transform duration-300 hover:bg-gradient-to-br hover:from-peach hover:to-peach/80 hover:text-navy cursor-pointer" title="Programs have consistently delivered above average growth for participants over 1 year">
+            <div className="font-cinzel text-2xl font-bold mb-2">1+ Years</div>
+            <div className="font-oswald text-sm uppercase tracking-wide">Above Average Growth</div>
           </div>
-          <div className="bg-gradient-to-br from-navy to-navy/90 text-cream rounded-xl p-6 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:from-peach hover:to-peach/80 cursor-pointer">
-            <div className="font-cinzel text-2xl font-bold text-peach mb-2">15+</div>
-            <div className="font-oswald text-cream/80 text-sm uppercase tracking-wide">Success Stories</div>
+          <div className="bg-gradient-to-br from-navy to-navy/90 text-cream rounded-xl p-6 shadow-lg transform transition-transform duration-300 hover:bg-gradient-to-br hover:from-peach hover:to-peach/80 hover:text-navy cursor-pointer">
+            <div className="font-cinzel text-2xl font-bold mb-2">15+</div>
+            <div className="font-oswald text-sm uppercase tracking-wide">Success Stories</div>
           </div>
           <p className="text-cream/70 text-sm mt-2 col-span-full text-center">Stats reflect programs and impact since launch in 2024.</p>
         </div>
