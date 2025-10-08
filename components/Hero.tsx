@@ -1,6 +1,8 @@
 'use client'
 import Image from 'next/image'
 
+// Remember to use next/font/google for Oswald and Cinzel fonts in app/layout.tsx for font stability
+
 const Hero: React.FC = () => {
   const handleDonateClick = (e: React.MouseEvent) => {
     e.preventDefault()
@@ -15,36 +17,38 @@ const Hero: React.FC = () => {
           {/* Column 1: Text */}
           <div className="space-y-8">
             <h1 className="font-oswald text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-navy animate-fadeInUp">
-              Igniting The Power Of The Silenced: To Amplify Every Voice!
-            </h1>
+              Education Gives You A Voice. Knowledge Gives You Power!            </h1>
             <h3 className="font-cinzel text-xl lg:text-1xl font-light text-navy uppercase tracking-wide animate-fadeInUp">
-              LeadWise Foundation is dedicated to empowering
-              underrepresented leaders in technology, education, and
-              beyond. We dismantle barriers, provide mentorship and
-              career coaching, and create pathways for leadership
-              equity and systemic change.
+              At LeadWise, we believe education is the spark that fuels empowerment and 
+              fearlessness.We equip every individual with the knowledge, skills, and 
+              confidence to rise above barriers, challenge inequities, and step boldly 
+              into any environment. With the right insights and guidance, no age,
+              background, or circumstance can hold you back—your potential is limitless, 
+              and your rightful place is wherever you choose to stand.
+
             </h3>
             <button
               onClick={handleDonateClick}
-              className="btn-primary shadow-lg hover:shadow-xl animate-fadeInUp"
+              className="btn-primary shadow-lg hover:shadow-x6 animate-fadeInUp"
             >
               Donate
             </button>
           </div>
 
           {/* Column 2: Single Full-Length Image */}
-          <div className="relative h-[520px] lg:h-[600px] rounded-2xl overflow-hidden shadow-xl">
+          <div className="relative aspect-[520/600] lg:aspect-[600/600] rounded-2xl overflow-hidden shadow-xl">
             <Image
               src="/images/hero1.svg"
               alt="Leadership Development"
               fill
+              priority
               className="object-cover"
             />
           </div>
 
           {/* Column 3: Two Stacked Images */}
           <div className="space-y-4">
-            <div className="relative h-[290px] lg:h-[300px] rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative aspect-[290/300] lg:aspect-[300/300] rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/images/hero2.svg"
                 alt="Collaborative Learning"
@@ -52,7 +56,7 @@ const Hero: React.FC = () => {
                 className="object-cover"
               />
             </div>
-            <div className="relative h-[290px] lg:h-[300px] rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative aspect-[290/300] lg:aspect-[300/300] rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/images/hero3.svg"
                 alt="Mentorship"

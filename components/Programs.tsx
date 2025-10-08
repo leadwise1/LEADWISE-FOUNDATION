@@ -1,5 +1,7 @@
 'use client'
 
+// Reminder: Use next/font/google to load Oswald and Cinzel fonts in app/layout.tsx to prevent font reflow and improve CLS stability.
+
 const Programs: React.FC = () => {
   const programs = [
     {
@@ -53,7 +55,7 @@ const Programs: React.FC = () => {
           {programs.map((program, index) => (
             <div
             key={index}
-            className="bg-gradient-to-br from-peach to-navy/90 border border-peach/10 rounded-2xl p-8 shadow-lg hover:shadow-[0_0_25px_rgba(33,34,64,0.2)] transition-all duration-300 hover:-translate-y-2 relative overflow-hidden group"
+            className="bg-gradient-to-br from-peach to-navy/90 border border-peach/10 rounded-2xl p-8 shadow-lg hover:shadow-[0_0_25px_rgba(33,34,64,0.2)] transition-transform duration-300 hover:-translate-y-2 relative overflow-hidden group min-h-[280px]"
           >
             <div className="absolute top-0 left-0 right-0 h-1 bg-navy"></div>
             <h3 className="font-oswald text-xl font-bold text-navy mb-4">

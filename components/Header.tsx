@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Head from 'next/head'
 import { SpeedInsights } from "@vercel/speed-insights/next"
+// Remember to load Oswald font via next/font/google in app/layout.tsx
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false)
 
@@ -49,7 +50,7 @@ const Header: React.FC = () => {
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       </Head>
-      <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+      <header className={`fixed w-full top-0 z-50 transition-[background,backdrop-filter] duration-300 ${
         scrolled ? 'bg-navy/95 backdrop-blur-md' : 'bg-navy'
       }`}>
         <nav className="container-custom">
@@ -60,7 +61,7 @@ const Header: React.FC = () => {
                 alt="LeadWise Foundation Logo"
                 width={180}
                 height={45}
-                className="h-20 w-auto"
+                priority
               />
             </Link>
             

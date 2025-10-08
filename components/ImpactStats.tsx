@@ -12,6 +12,8 @@ const ImpactStats: React.FC = () => {
   const [animatedStats, setAnimatedStats] = useState<Record<string, number>>({})
   const sectionRef = useRef<HTMLElement>(null)
 
+  // Reminder: Use next/font/google for Oswald and Cinzel in app/layout.tsx to prevent font reflow
+
   const stats: Stat[] = [
     { number: '2024', label: 'Year Founded' },
     { number: '50+', label: 'Leaders Trained', suffix: '+' },
@@ -74,17 +76,19 @@ const ImpactStats: React.FC = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className={`text-center transform transition-all duration-700 ${
+              className={`text-center transform transition-transform transition-opacity duration-700 ${
                 isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-                           <div className="bg-gradient-to-br from-navy to-navy/90 text-cream rounded-2xl p-6 shadow-lg hover:shadow-[0_0_25px_rgba(33,34,64,0.6)] transition-all duration-300 group h-full flex flex-col justify-center">
-                <div className="font-cinzel text-3xl lg:text-4xl xl:text-5xl font-bold text-peach mb-2 group-hover:scale-110 transition-transform duration-300">
-                  {isVisible 
-                    ? `${animatedStats[stat.label] || 0}${stat.suffix || ''}`
-                    : `0${stat.suffix || ''}`
-                  }
+              <div className="bg-gradient-to-br from-navy to-navy/90 text-cream rounded-2xl p-6 shadow-lg hover:shadow-[0_0_25px_rgba(33,34,64,0.6)] transition-all duration-300 group h-full flex flex-col justify-center">
+                <div className="w-[6ch] mx-auto">
+                  <div className="font-cinzel text-3xl lg:text-4xl xl:text-5xl font-bold text-peach mb-2 group-hover:scale-110 transition-transform duration-300">
+                    {isVisible 
+                      ? `${animatedStats[stat.label] || 0}${stat.suffix || ''}`
+                      : `0${stat.suffix || ''}`
+                    }
+                  </div>
                 </div>
                 <div className="font-oswald text-sm lg:text-base font-medium text-cream/80 uppercase tracking-wide">
                   {stat.label}
@@ -96,7 +100,7 @@ const ImpactStats: React.FC = () => {
 
         {/* Additional Impact Message */}
         <div className="mt-16 text-center">
-        <div className="bg-gradient-to-br from-navy to-navy/90 text-cream border border-peach/30 rounded-2xl p-8 max-w-4xl mx-auto">
+          <div className="bg-gradient-to-br from-navy to-navy/90 text-cream border border-peach/30 rounded-2xl p-8 max-w-4xl mx-auto">
             <h3 className="font-cinzel text-2xl font-semibold text-peach mb-4">
               Building Tomorrow's Leaders Today
             </h3>
