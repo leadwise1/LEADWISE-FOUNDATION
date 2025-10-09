@@ -59,7 +59,7 @@ const Header: React.FC = () => {
               <Image
                 src="/images/logo.svg"
                 alt="LeadWise Foundation Logo"
-                width={180}
+                width={80}
                 height={45}
                 priority
               />

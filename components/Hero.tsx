@@ -16,27 +16,22 @@ const Hero: React.FC = () => {
         <div className="grid lg:grid-cols-3 gap-8 items-center">
           {/* Column 1: Text */}
           <div className="space-y-8">
-            <h1 className="font-oswald text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-navy animate-fadeInUp">
-              Education Gives You A Voice. Knowledge Gives You Power!            </h1>
-            <h3 className="font-cinzel text-xl lg:text-1xl font-light text-navy uppercase tracking-wide animate-fadeInUp">
-              At LeadWise, we believe education is the spark that fuels empowerment and 
-              fearlessness.We equip every individual with the knowledge, skills, and 
-              confidence to rise above barriers, challenge inequities, and step boldly 
-              into any environment. With the right insights and guidance, no age,
-              background, or circumstance can hold you back—your potential is limitless, 
-              and your rightful place is wherever you choose to stand.
-
-            </h3>
+            <h1 className="font- fashionista text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-navy animate-fadeInUp">
+            Education Gives You A Voice. 
+            Knowledge Gives You Power!            </h1>
+            <h4 className="font-oswald text-xl lg:text-1xl font-light text-navy uppercase tracking-wide animate-fadeInUp">
+             At Leadwise, we believe education ignites empowerment and courage. We equip individuals with the skills and confidence to overcome challenges and confront inequities. No age, background, or circumstance can limit your potential—your rightful place is wherever you choose to stand. Embrace your journey and unlock limitless possibilities!
+            </h4>
             <button
               onClick={handleDonateClick}
-              className="btn-primary shadow-lg hover:shadow-x6 animate-fadeInUp"
+              className="btn-primary shadow-lg hover:shadow-x1 animate-fadeInUp"
             >
               Donate
             </button>
           </div>
 
           {/* Column 2: Single Full-Length Image */}
-          <div className="relative aspect-[520/600] lg:aspect-[600/600] rounded-2xl overflow-hidden shadow-xl">
+          <div className="relative aspect-[720/600] lg:aspect-[300/600] rounded-2xl overflow-hidden shadow-xl">
             <Image
               src="/images/hero1.svg"
               alt="Leadership Development"
