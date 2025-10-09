@@ -15,7 +15,7 @@ const Reviews: React.FC = () => {
     }, 5000) // Change review every 5 seconds
 
     return () => clearInterval(interval)
-  }, [autoplay, reviews.length])
+  }, [autoplay])
 
   const goToReview = (index: number) => {
     setCurrentReviewIndex(index)
@@ -47,7 +47,11 @@ const Reviews: React.FC = () => {
         </div>
 
         <div className="relative max-w-5xl mx-auto">
-          <div className="bg-gradient-to-br from-navy to-navy/90 text-cream rounded-3xl p-8 lg:p-12 shadow-xl border border-peach/20 relative overflow-hidden">
+          <div
+            className="bg-gradient-to-br from-navy to-navy/90 text-cream rounded-3xl p-8 lg:p-12 shadow-xl border border-peach/20 relative overflow-hidden"
+            aria-live="polite"
+            aria-atomic="true"
+          >
             {/* Quote icon */}
             <div className="absolute top-6 left-6 text-cream/10">
               {/* You can replace this with an actual SVG icon if you have one */}
@@ -65,7 +69,7 @@ const Reviews: React.FC = () => {
                 </div>
                 <div className="flex-1">
                   <div className="mb-6">
-                    <div className="flex mb-3">
+                    <div className="flex mb-3" role="img" aria-label={`${currentReview.rating} out of 5 stars`}>
                       {[...Array(currentReview.rating)].map((_, i) => (
                         <span key={i} className="text-yellow-400 text-xl">★</span>
                       ))}
@@ -99,15 +103,31 @@ const Reviews: React.FC = () => {
 
           {/* Pagination Dots */}
           <div className="flex justify-center mt-8 space-x-3">
-            {reviews.map((_, index) => (
+            {reviews.map((review, index) => (
               <button
-                key={index}
+                key={review.id}
                 onClick={() => goToReview(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentReviewIndex ? 'bg-navy scale-125' : 'bg-navy/30 hover:bg-navy/60'}`}
                 aria-label={`Go to review ${index + 1}`}
               ></button>
             ))}
           </div>
+        </div>
+
+        {/* Autoplay Toggle */}
+        <div className="flex justify-center mt-6">
+          <button
+            onClick={() => setAutoplay(!autoplay)}
+            className="flex items-center gap-2 font-oswald text-sm text-navy/70 hover:text-navy transition-colors"
+            aria-label={autoplay ? 'Pause reviews autoplay' : 'Start reviews autoplay'}
+          >
+            {autoplay ? (
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" /></svg>
+            ) : (
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" /></svg>
+            )}
+            <span>{autoplay ? 'PAUSE' : 'PLAY'}</span>
+          </button>
         </div>
 
         {/* Additional Stats */}
@@ -129,7 +149,7 @@ const Reviews: React.FC = () => {
             <div className="font-oswald text-cream/80 text-sm uppercase tracking-wide">Success Stories</div>
           </div>
         </div>
-        <p className="text-cream/70 text-sm mt-2">Stats reflect programs and impact since launch in 2024.</p>
+        <p className="text-navy/70 text-sm mt-4 text-center">Stats reflect programs and impact since launch in 2024.</p>
       </div>
     </section>
   )

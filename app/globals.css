@@ -7,13 +7,17 @@
     --font-cinzel: 'Cinzel', serif;
     --font-oswald: 'Oswald', sans-serif;
   }
+
+  /* Smooth scrolling */
+  html {
+    @apply scroll-smooth;
+  }
 }
 
 @layer components {
   .container-custom {
     @apply max-w-6xl mx-auto px-5;
-  }
-  
+  } 
   .btn-primary {
     @apply bg-peach text-navy px-10 py-4 rounded-full font-oswald font-medium text-lg cursor-pointer transition-all duration-300 uppercase tracking-wide border-2 border-peach hover:bg-navy hover:text-cream hover:border-navy hover:-translate-y-1;
   }
@@ -21,11 +25,6 @@
   .btn-secondary {
     @apply bg-navy text-cream px-10 py-4 rounded-full font-oswald font-medium text-lg cursor-pointer transition-all duration-300 uppercase tracking-wide border-2 border-navy hover:bg-cream hover:text-navy hover:-translate-y-1;
   }
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
 }
 
 /* Custom animations */
