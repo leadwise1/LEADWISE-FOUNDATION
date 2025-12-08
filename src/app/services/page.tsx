@@ -1,12 +1,9 @@
 "use client"; // Required if using useEffect
 
 import { useEffect } from "react";
-import lucide from "lucide";
 
 export default function ServicesPage() {
   useEffect(() => {
-    lucide.createIcons();
-
     // Mobile menu toggle
     const toggleMobileMenu = () => {
       const menu = document.getElementById("mobile-menu");
@@ -51,7 +48,7 @@ export default function ServicesPage() {
           </div>
 
           <button className="md:hidden text-white" onClick={() => (window as any).toggleMobileMenu()}>
-            <i data-lucide="menu" size="28"></i>
+            <span className="text-2xl">☰</span>
           </button>
         </div>
 
@@ -77,7 +74,7 @@ export default function ServicesPage() {
           {/* Example Service Card */}
           <div className="glass rounded-2xl p-8 feature-card border border-white/10 hover:border-cyan-400/50">
             <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center mb-6">
-              <i data-lucide="file-text" size="32" className="text-white"></i>
+              <span className="text-3xl">📄</span>
             </div>
             <h3 className="text-2xl font-bold mb-3 font-orbitron">Resume Builder</h3>
             <p className="text-gray-400 mb-4">
@@ -87,7 +84,7 @@ export default function ServicesPage() {
 
           <div className="glass rounded-2xl p-8 feature-card border border-white/10 hover:border-purple-400/50">
             <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center mb-6">
-              <i data-lucide="mail" size="32" className="text-white"></i>
+              <span className="text-3xl">✉️</span>
             </div>
             <h3 className="text-2xl font-bold mb-3 font-orbitron">Cover Letters</h3>
             <p className="text-gray-400 mb-4">
