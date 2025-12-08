@@ -5,15 +5,17 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { usePathname } from 'next/navigation'
-import { Menu, X } from 'lucide-react' // <--- 1. Import Icons
+import { Menu, X } from 'lucide-react'
 
+// 1. THIS ARRAY CONTROLS YOUR MENU ITEMS
+// Ensure "Services" is listed here for it to appear on the screen.
 const navItems = [
   { href: '#about', label: 'About' },
   { href: '#programs', label: 'Programs' },
   { href: '#impact', label: 'Impact' },
   { href: '#team', label: 'Team' },
   { href: '#donate', label: 'Donate' },
-  { href: '/services', label: 'Services' },
+  { href: '/services', label: 'Services' }, // <--- THIS LINK WAS LIKELY MISSING
 ]
 
 const Header: React.FC = () => {
@@ -28,12 +30,14 @@ const Header: React.FC = () => {
   }, [])
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, target: string) => {
+    // Only intercept navigation for hash links (scroll anchors)
     if (target.startsWith('#')) {
       e.preventDefault()
       const element = document.querySelector(target)
       if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' })
       setMobileOpen(false)
     } else {
+      // For standard pages like '/services', let Next.js Link handle it
       setMobileOpen(false)
     }
   }
@@ -89,7 +93,6 @@ const Header: React.FC = () => {
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
-              {/* 2. Using Valid React Components */}
               {mobileOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
@@ -130,4 +133,4 @@ const Header: React.FC = () => {
   )
 }
 
-export default Header
+export default Header           
