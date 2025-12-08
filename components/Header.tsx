@@ -7,6 +7,15 @@ import Head from 'next/head'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { usePathname } from 'next/navigation'
 
+const navItems = [
+  { href: '#about', label: 'About' },
+  { href: '#programs', label: 'Programs' },
+  { href: '#impact', label: 'Impact' },
+  { href: '#team', label: 'Team' },
+  { href: '#donate', label: 'Donate' },
+  { href: '/services', label: 'Services' }, // Services page
+]
+
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -18,21 +27,12 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const handleNavClick = (e: React.MouseEvent, target: string) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, target: string) => {
     e.preventDefault()
     const element = document.querySelector(target)
     if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' })
     setMobileOpen(false)
   }
-
-  const navItems = [
-    { href: '#about', label: 'About' },
-    { href: '#programs', label: 'Programs' },
-    { href: '#impact', label: 'Impact' },
-    { href: '#team', label: 'Team' },
-    { href: '#donate', label: 'Donate' },
-    { href: '/services', label: 'Services' }, // Services page
-  ]
 
   return (
     <>
@@ -40,21 +40,30 @@ const Header: React.FC = () => {
         <title>LeadWise Foundation - Empowering Marginalized Communities with Mentorship and Career Growth</title>
 
         {/* SEO Meta Tags */}
-        <meta name="description" content="LeadWise Foundation provides mentorship, career growth programs, and resources to empower marginalized communities towards economic independence and success." />
+        <meta
+          name="description"
+          content="LeadWise Foundation provides mentorship, career growth programs, and resources to empower marginalized communities towards economic independence and success."
+        />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="LeadWise Foundation" />
 
-        {/* Open Graph */}
+        {/* Open Graph Meta Tags */}
         <meta property="og:title" content="LeadWise Foundation - Empowering Marginalized Communities" />
-        <meta property="og:description" content="Join LeadWise Foundation to access mentorship, career development programs, and resources designed to help marginalized individuals achieve economic independence." />
+        <meta
+          property="og:description"
+          content="Join LeadWise Foundation to access mentorship, career development programs, and resources designed to help marginalized individuals achieve economic independence."
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://leadwise.foundation/" />
         <meta property="og:image" content="https://leadwise.foundation/images/og-image.png" />
 
-        {/* Twitter */}
+        {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="LeadWise Foundation - Empowering Marginalized Communities" />
-        <meta name="twitter:description" content="Discover mentorship and career growth opportunities with LeadWise Foundation, supporting marginalized individuals in achieving economic independence." />
+        <meta
+          name="twitter:description"
+          content="Discover mentorship and career growth opportunities with LeadWise Foundation, supporting marginalized individuals in achieving economic independence."
+        />
         <meta name="twitter:image" content="https://leadwise.foundation/images/og-image.png" />
 
         {/* Favicon */}
@@ -81,9 +90,9 @@ const Header: React.FC = () => {
 
             {/* Desktop Menu */}
             <ul className="hidden md:flex space-x-8">
-              {navItems.map((item) =>
-                item.href.startsWith('#') ? (
-                  <li key={item.href}>
+              {navItems.map((item) => (
+                <li key={item.href}>
+                  {item.href.startsWith('#') ? (
                     <a
                       href={item.href}
                       onClick={(e) => handleNavClick(e, item.href)}
@@ -91,9 +100,7 @@ const Header: React.FC = () => {
                     >
                       {item.label}
                     </a>
-                  </li>
-                ) : (
-                  <li key={item.href}>
+                  ) : (
                     <Link
                       href={item.href}
                       className={`text-cream hover:text-peach transition-colors duration-300 font-oswald uppercase tracking-wide ${
@@ -102,9 +109,9 @@ const Header: React.FC = () => {
                     >
                       {item.label}
                     </Link>
-                  </li>
-                )
-              )}
+                  )}
+                </li>
+              ))}
             </ul>
 
             {/* Mobile Menu Button */}
