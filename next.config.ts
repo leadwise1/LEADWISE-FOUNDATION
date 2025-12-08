@@ -6,7 +6,9 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   output: "export",
-  /* other config options here */
+  images: {
+    unoptimized: true, // <--- THIS IS THE FIX
+  },
 };
 
 export default nextConfig;
