@@ -3,9 +3,9 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import Head from 'next/head'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { usePathname } from 'next/navigation'
+import { Menu, X } from 'lucide-react' // <--- IMPORT ICONS HERE
 
 const navItems = [
   { href: '#about', label: 'About' },
@@ -13,7 +13,7 @@ const navItems = [
   { href: '#impact', label: 'Impact' },
   { href: '#team', label: 'Team' },
   { href: '#donate', label: 'Donate' },
-  { href: '/services', label: 'Services' }, // Services page
+  { href: '/services', label: 'Services' },
 ]
 
 const Header: React.FC = () => {
@@ -28,49 +28,20 @@ const Header: React.FC = () => {
   }, [])
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, target: string) => {
-    e.preventDefault()
-    const element = document.querySelector(target)
-    if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    setMobileOpen(false)
+    // Only prevent default if it's a hash link on the home page
+    if (target.startsWith('#')) {
+        e.preventDefault()
+        const element = document.querySelector(target)
+        if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        setMobileOpen(false)
+    } else {
+        // Allow default navigation for standard links
+        setMobileOpen(false)
+    }
   }
 
   return (
     <>
-      <Head>
-        <title>LeadWise Foundation - Empowering Marginalized Communities with Mentorship and Career Growth</title>
-
-        {/* SEO Meta Tags */}
-        <meta
-          name="description"
-          content="LeadWise Foundation provides mentorship, career growth programs, and resources to empower marginalized communities towards economic independence and success."
-        />
-        <meta name="robots" content="index, follow" />
-        <meta name="author" content="LeadWise Foundation" />
-
-        {/* Open Graph Meta Tags */}
-        <meta property="og:title" content="LeadWise Foundation - Empowering Marginalized Communities" />
-        <meta
-          property="og:description"
-          content="Join LeadWise Foundation to access mentorship, career development programs, and resources designed to help marginalized individuals achieve economic independence."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://leadwise.foundation/" />
-        <meta property="og:image" content="https://leadwise.foundation/images/og-image.png" />
-
-        {/* Twitter Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="LeadWise Foundation - Empowering Marginalized Communities" />
-        <meta
-          name="twitter:description"
-          content="Discover mentorship and career growth opportunities with LeadWise Foundation, supporting marginalized individuals in achieving economic independence."
-        />
-        <meta name="twitter:image" content="https://leadwise.foundation/images/og-image.png" />
-
-        {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-      </Head>
-
       <header
         className={`fixed w-full top-0 z-50 transition-[background,backdrop-filter] duration-300 ${
           scrolled ? 'bg-navy/95 backdrop-blur-md' : 'bg-navy'
@@ -96,7 +67,7 @@ const Header: React.FC = () => {
                     <a
                       href={item.href}
                       onClick={(e) => handleNavClick(e, item.href)}
-                      className="text-cream hover:text-peach transition-colors duration-300 font-oswald uppercase tracking-wide"
+                      className="text-cream hover:text-peach transition-colors duration-300 font-oswald uppercase tracking-wide cursor-pointer"
                     >
                       {item.label}
                     </a>
@@ -116,23 +87,25 @@ const Header: React.FC = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden text-cream"
+              className="md:hidden text-cream hover:text-peach transition-colors"
               onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Toggle menu"
             >
-              <i data-lucide="menu" size="28"></i>
+              {/* THIS IS THE FIX: Using React Components instead of <i> tags */}
+              {mobileOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
 
           {/* Mobile Menu */}
           {mobileOpen && (
-            <div className="md:hidden glass border-t border-white/10 px-6 py-4 space-y-4">
+            <div className="md:hidden bg-navy/95 backdrop-blur-md border-t border-white/10 px-6 py-4 space-y-4 absolute left-0 right-0 top-full shadow-xl">
               {navItems.map((item) =>
                 item.href.startsWith('#') ? (
                   <a
                     key={item.href}
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
-                    className="block text-cream hover:text-peach transition-colors duration-300 font-oswald uppercase tracking-wide"
+                    className="block text-cream hover:text-peach transition-colors duration-300 font-oswald uppercase tracking-wide text-lg py-2 border-b border-white/5 last:border-0"
                   >
                     {item.label}
                   </a>
@@ -141,7 +114,7 @@ const Header: React.FC = () => {
                     key={item.href}
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className={`block text-cream hover:text-peach transition-colors duration-300 font-oswald uppercase tracking-wide ${
+                    className={`block text-cream hover:text-peach transition-colors duration-300 font-oswald uppercase tracking-wide text-lg py-2 border-b border-white/5 last:border-0 ${
                       pathname === item.href ? 'text-peach font-bold' : ''
                     }`}
                   >
