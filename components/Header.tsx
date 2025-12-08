@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { usePathname } from 'next/navigation'
-import { Menu, X } from 'lucide-react' // <--- IMPORT ICONS HERE
+import { Menu, X } from 'lucide-react' // <--- 1. Import the icons here
 
 const navItems = [
   { href: '#about', label: 'About' },
@@ -35,7 +35,7 @@ const Header: React.FC = () => {
         if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' })
         setMobileOpen(false)
     } else {
-        // Allow default navigation for standard links
+        // Allow default navigation for standard links like '/services'
         setMobileOpen(false)
     }
   }
@@ -91,7 +91,7 @@ const Header: React.FC = () => {
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
-              {/* THIS IS THE FIX: Using React Components instead of <i> tags */}
+              {/* 2. REPLACED THE INVALID <i ...> TAG WITH REACT COMPONENTS */}
               {mobileOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
