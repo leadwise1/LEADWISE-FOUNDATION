@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { usePathname } from 'next/navigation'
-import { Menu, X } from 'lucide-react' // <--- 1. Import the icons here
+import { Menu, X } from 'lucide-react' // <--- 1. IMPORT ICONS
 
 const navItems = [
   { href: '#about', label: 'About' },
@@ -28,15 +28,14 @@ const Header: React.FC = () => {
   }, [])
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, target: string) => {
-    // Only prevent default if it's a hash link on the home page
+    // Only prevent default for hash links on the homepage
     if (target.startsWith('#')) {
-        e.preventDefault()
-        const element = document.querySelector(target)
-        if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        setMobileOpen(false)
+      e.preventDefault()
+      const element = document.querySelector(target)
+      if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      setMobileOpen(false)
     } else {
-        // Allow default navigation for standard links like '/services'
-        setMobileOpen(false)
+      setMobileOpen(false)
     }
   }
 
@@ -91,14 +90,14 @@ const Header: React.FC = () => {
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
-              {/* 2. REPLACED THE INVALID <i ...> TAG WITH REACT COMPONENTS */}
+              {/* 2. FIXED ICON RENDERING */}
               {mobileOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
 
           {/* Mobile Menu */}
           {mobileOpen && (
-            <div className="md:hidden bg-navy/95 backdrop-blur-md border-t border-white/10 px-6 py-4 space-y-4 absolute left-0 right-0 top-full shadow-xl">
+            <div className="md:hidden bg-navy/95 backdrop-blur-md border-t border-white/10 px-6 py-4 space-y-4 absolute left-0 right-0 top-full shadow-xl h-screen">
               {navItems.map((item) =>
                 item.href.startsWith('#') ? (
                   <a
