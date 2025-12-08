@@ -13,58 +13,57 @@ import {
   ArrowRight
 } from "lucide-react"; 
 import Link from "next/link";
-import Image from "next/image";
+
+// You can keep the features array inside the component or move it outside
+const features = [
+  {
+    title: "Voice Interview Simulator",
+    desc: "Practice with 'Coach Leo' in real-time. Receive instant feedback on your tone, pace, and answer quality.",
+    icon: <Mic className="text-peach" size={32} />,
+    gradient: "from-navy to-navy/90"
+  },
+  {
+    title: "AI Resume Architect",
+    desc: "Not just a builder. We use ATS-compliant parsing to rewrite your bullets for maximum impact.",
+    icon: <FileText className="text-peach" size={32} />,
+    gradient: "from-navy to-navy/90"
+  },
+  {
+    title: "Gamified Career Growth",
+    desc: "Turn job hunting into a game. Earn XP, unlock badges, and complete Daily Bingo challenges.",
+    icon: <Gamepad2 className="text-peach" size={32} />,
+    gradient: "from-navy to-navy/90"
+  },
+  {
+    title: "Tactical Job Tracker",
+    desc: "A Kanban-style board to track every application. Leo gives you 'Intel' on every company you save.",
+    icon: <Target className="text-peach" size={32} />,
+    gradient: "from-navy to-navy/90"
+  },
+  {
+    title: "Adaptive Personality Engine",
+    desc: "Switch Leo between Friendly, Strict, and Professional modes to match your learning style.",
+    icon: <BrainCircuit className="text-peach" size={32} />,
+    gradient: "from-navy to-navy/90"
+  },
+  {
+    title: "Bias Detection & Security",
+    desc: "Enterprise-grade privacy ensures your data is safe, while our AI removes unconscious bias from your profile.",
+    icon: <ShieldCheck className="text-peach" size={32} />,
+    gradient: "from-navy to-navy/90"
+  }
+];
 
 export default function ServicesPage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const features = [
-    {
-      title: "Voice Interview Simulator",
-      desc: "Practice with 'Coach Leo' in real-time. Receive instant feedback on your tone, pace, and answer quality.",
-      icon: <Mic className="text-peach" size={32} />,
-      gradient: "from-navy to-navy/90"
-    },
-    {
-      title: "AI Resume Architect",
-      desc: "Not just a builder. We use ATS-compliant parsing to rewrite your bullets for maximum impact.",
-      icon: <FileText className="text-peach" size={32} />,
-      gradient: "from-navy to-navy/90"
-    },
-    {
-      title: "Gamified Career Growth",
-      desc: "Turn job hunting into a game. Earn XP, unlock badges, and complete Daily Bingo challenges.",
-      icon: <Gamepad2 className="text-peach" size={32} />,
-      gradient: "from-navy to-navy/90"
-    },
-    {
-      title: "Tactical Job Tracker",
-      desc: "A Kanban-style board to track every application. Leo gives you 'Intel' on every company you save.",
-      icon: <Target className="text-peach" size={32} />,
-      gradient: "from-navy to-navy/90"
-    },
-    {
-      title: "Adaptive Personality Engine",
-      desc: "Switch Leo between Friendly, Strict, and Professional modes to match your learning style.",
-      icon: <BrainCircuit className="text-peach" size={32} />,
-      gradient: "from-navy to-navy/90"
-    },
-    {
-      title: "Bias Detection & Security",
-      desc: "Enterprise-grade privacy ensures your data is safe, while our AI removes unconscious bias from your profile.",
-      icon: <ShieldCheck className="text-peach" size={32} />,
-      gradient: "from-navy to-navy/90"
-    }
-  ];
-
   return (
     <div className="bg-cream min-h-screen text-navy font-oswald">
       
-      {/* HEADER NAVIGATION (Reusing style from main site) */}
+      {/* HEADER NAVIGATION */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-navy text-cream shadow-lg">
         <div className="container-custom h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-             {/* Replace with your actual logo component if available, or just text */}
              <div className="font-cinzel text-2xl font-bold tracking-wide">LeadWise</div>
           </Link>
 
@@ -174,8 +173,7 @@ export default function ServicesPage() {
               Meet Coach Leo
             </a>
           </div>
-          <div className="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
-             {/* Replace with a screenshot of your app dashboard */}
+          <div className="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 bg-gray-800">
              <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-black flex items-center justify-center">
                 <span className="text-gray-500 font-cinzel">App Screenshot Placeholder</span>
              </div>
