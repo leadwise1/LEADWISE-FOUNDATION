@@ -350,9 +350,10 @@ export default function ServicesPage() {
                 </a>
               </div>
               
-              {/* VIDEO SECTION: Updated for better reliability */}
+             {/* VIDEO SECTION: Added 'key' prop to force React to reload the video player when the source changes */}
               <div className="relative h-[400px] w-full rounded-2xl overflow-hidden border border-white/10 bg-slate-950 shadow-2xl group">
                 <video 
+                  key="/images/leo.mp4" 
                   className="w-full h-full object-cover"
                   autoPlay 
                   loop 
@@ -363,13 +364,13 @@ export default function ServicesPage() {
                   Your browser does not support the video tag.
                 </video>
                 {/* Overlay for tint integration */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-emerald-900/20 to-peach-900/20 pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-emerald-900/20 to-orange-900/20 pointer-events-none"></div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
+      
       {/* ENTERPRISE SECTION */}
       <section className="relative py-20 px-6">
         <div className="max-w-7xl mx-auto">
