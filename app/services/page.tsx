@@ -2,82 +2,117 @@
 
 import { useState } from "react";
 import {
-Menu,
-X,
-FileText,
-Mic,
-Gamepad2,
-Target,
-BrainCircuit,
-ShieldCheck,
-ArrowRight
+  Menu,
+  X,
+  FileText,
+  Mic,
+  Gamepad2,
+  Target,
+  BrainCircuit,
+  ShieldCheck,
+  ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
 
-// Introduction: Nonprofit mission → Human-centric AI → Video
-const ServicesIntro = () => (
+// --------------------------------------------------
+// INTRO SECTION
+// --------------------------------------------------
+const ServicesIntro = () => {
+  return (
+    <section className="py-16 max-w-4xl mx-auto text-center">
+      <h1 className="text-4xl font-bold text-navy mb-6">
+        Our Leadership & Career Services
+      </h1>
+      <p className="text-lg text-gray-700 leading-relaxed">
+        Empowering individuals with human-centered AI that recognizes your
+        identity, your voice, and your potential.  
+        Coach Leo adapts to your communication style, emotional state, and
+        learning pace — making leadership growth accessible to everyone.
+      </p>
 
-// Feature array
+      {/* If you want to include your Leo video: */}
+      {/* <video src="/images/leo.mp4" className="mx-auto mt-8 rounded-xl" controls /> */}
+    </section>
+  );
+};
+
+// --------------------------------------------------
+// FEATURES ARRAY (FIXED & VALID)
+// --------------------------------------------------
 const features = [
-{
-title: "Human-Centric AI Coach",
-desc: "Interact with an AI that feels like a real mentor. Recognizable face, consistent voice, and adaptive tone create a personal connection while providing actionable career guidance.",
-icon: ,
-gradient: "from-navy to-navy/90",
-},
-{
-title: "Voice Interview Simulator",
-desc: "Practice with Coach Leo in real-time. Improve communication, clarity, and leadership presence while receiving empathetic, human-like feedback.",
-icon: ,
-gradient: "from-navy to-navy/90",
-},
-{
-title: "AI Resume Architect",
-desc: "Turn your experience into impact. Our ATS-aware resume tool rewrites your achievements with clarity and strength, helping your voice rise above systemic hiring barriers.",
-icon: ,
-gradient: "from-navy to-navy/90",
-},
-{
-title: "Gamified Career Growth",
-desc: "Leadership development should be engaging—not overwhelming. Earn XP, unlock badges, and build momentum with daily micro-challenges that make growth motivating and fun.",
-icon: ,
-gradient: "from-navy to-navy/90",
-},
-{
-title: "Targeted Skill Development",
-desc: "Access structured programs focusing on high-impact skills for leadership, career advancement, and overcoming systemic barriers.",
-icon: ,
-gradient: "from-navy to-navy/90",
-},
-{
-title: "Leadership Insights & Analytics",
-desc: "Track your progress with actionable insights, understanding where you excel and where to grow, ensuring each step aligns with your leadership journey.",
-icon: ,
-gradient: "from-navy to-navy/90",
-},
-{
-title: "Equity & Policy Guidance",
-desc: "Learn strategies to navigate systemic challenges and advocate effectively for yourself and others, making change personal and systemic.",
-icon: ,
-gradient: "from-navy to-navy/90",
-},
+  {
+    title: "Human-Centric AI Coach",
+    desc: "Interact with an AI that feels like a real mentor. Recognizable face, consistent voice, and adaptive tone create a personal connection while providing actionable career guidance.",
+    icon: BrainCircuit,
+    gradient: "from-navy to-navy/90",
+  },
+  {
+    title: "Voice Interview Simulator",
+    desc: "Practice with Coach Leo in real-time. Improve communication, clarity, and leadership presence while receiving human-like, empathetic feedback.",
+    icon: Mic,
+    gradient: "from-navy to-navy/90",
+  },
+  {
+    title: "AI Resume Architect",
+    desc: "Transform your experience into a powerful, ATS-optimized resume that highlights your strengths and removes hidden hiring barriers.",
+    icon: FileText,
+    gradient: "from-navy to-navy/90",
+  },
+  {
+    title: "Gamified Career Growth",
+    desc: "Earn XP, unlock badges, and stay motivated with micro-challenges that make career development fun and rewarding.",
+    icon: Gamepad2,
+    gradient: "from-navy to-navy/90",
+  },
+  {
+    title: "Targeted Skill Development",
+    desc: "Structured, research-backed programs designed to elevate essential leadership and workforce skills.",
+    icon: Target,
+    gradient: "from-navy to-navy/90",
+  },
+  {
+    title: "Leadership Insights & Analytics",
+    desc: "Track your emotional patterns, communication behavior, and growth progress with actionable insights.",
+    icon: ShieldCheck,
+    gradient: "from-navy to-navy/90",
+  },
+  {
+    title: "Equity & Policy Guidance",
+    desc: "Learn how to navigate systemic challenges and advocate effectively for yourself and your community.",
+    icon: ArrowRight,
+    gradient: "from-navy to-navy/90",
+  },
 ];
 
+// --------------------------------------------------
+// MAIN SERVICES PAGE
+// --------------------------------------------------
 export default function ServicesPage() {
-const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-return (
+  return (
+    <main className="min-h-screen bg-white">
+      <ServicesIntro />
 
+      {/* FEATURES GRID */}
+      <section className="max-w-6xl mx-auto px-6 pb-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {features.map((feature, idx) => {
+          const Icon = feature.icon;
+          return (
+            <div
+              key={idx}
+              className="feature-card bg-gradient-to-br from-navy to-navy/90 text-white p-6 rounded-xl shadow-lg flex flex-col gap-4"
+            >
+              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                <Icon size={28} />
+              </div>
 
-
-{features.map((feature, idx) => (
-<div key={idx} className={feature-card bg-gradient-to-br ${feature.gradient} p-6 rounded-lg shadow-lg}>
-{feature.icon}
-{feature.title}
-{feature.desc}
-
-))}
-
-
-);
+              <h3 className="text-xl font-semibold">{feature.title}</h3>
+              <p className="text-sm text-white/90 leading-relaxed">{feature.desc}</p>
+            </div>
+          );
+        })}
+      </section>
+    </main>
+  );
 }
