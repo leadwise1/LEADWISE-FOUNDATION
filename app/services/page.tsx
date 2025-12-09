@@ -359,7 +359,7 @@ export default function ServicesPage() {
                   muted 
                   playsInline
                 >
-                  <source src="/image/leo.mp4" type="video/mp4" />
+                  <source src="/images/leo.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 {/* Overlay for tint integration */}
@@ -402,7 +402,7 @@ export default function ServicesPage() {
       <section className="relative py-24 px-6 border-t border-white/5">
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6" style={{fontFamily: 'Oswald, serif'}}>
-            Ready to Find <span className="bg-gradient-to-r from-emerald-400 to-peach-900 bg-clip-text text-transparent">Your Voice?</span>
+            Ready to Find <span className="bg-gradient-to-r from-emerald-400 to-blue-300 bg-clip-text text-transparent">Your Voice?</span>
           </h2>
           
           <p className="text-white/60 text-lg mb-12">
