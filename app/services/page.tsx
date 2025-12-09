@@ -350,7 +350,7 @@ export default function ServicesPage() {
                 </a>
               </div>
               
-             {/* VIDEO SECTION: Added 'key' prop to force React to reload the video player when the source changes */}
+            {/* VIDEO SECTION: Forced re-render with unique Key */}
               <div className="relative h-[400px] w-full rounded-2xl overflow-hidden border border-white/10 bg-slate-950 shadow-2xl group">
                 <video 
                   key="/images/leo.mp4" 
@@ -370,6 +370,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
       
       {/* ENTERPRISE SECTION */}
       <section className="relative py-20 px-6">
