@@ -30,7 +30,6 @@ const ServicesIntro = () => {
         learning pace — making leadership growth accessible to everyone.
       </p>
 
-      {/* If you want to include your Leo video: */}
       {/* <video src="/images/leo.mp4" className="mx-auto mt-8 rounded-xl" controls /> */}
     </section>
   );
