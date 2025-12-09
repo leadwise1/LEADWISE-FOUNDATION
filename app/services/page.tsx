@@ -26,7 +26,7 @@ const features = [
     title: "Confidence Lab",
     desc: "A safe space to practice. Coach Leo provides real-time, judgment-free feedback on your tone and delivery, helping you find your voice before the stakes are high.",
     icon: <Mic className="text-white" size={32} />,
-    gradient: "from-emerald-600 via-teal-500 to-emerald-400" // Deep Green to Teal
+    gradient: "from-emerald-600 via-teal-500 to-white-300" // Deep Green to Teal
   },
   {
     title: "Narrative Architect",
@@ -38,7 +38,7 @@ const features = [
     title: "Adaptive Mentorship",
     desc: "Personalized guidance that adapts to your emotional needs. Toggle between 'Friendly' for encouragement, or 'Strict' for high-accountability preparation.",
     icon: <MessageSquare className="text-white" size={32} />,
-    gradient: "from-peach-400 via-amber-300 to-emerald-400" // Peach (Orange) to Green
+    gradient: "from-blue-400 via-amber-300 to-emerald-400" // Peach (Orange) to Green
   },
   {
     title: "Holistic Pathways",
@@ -50,7 +50,7 @@ const features = [
     title: "Impact Measurement",
     desc: "For our partners: Real-time dashboards that track skill acquisition and placement rates, allowing you to visualize the tangible impact of your scholarship funds.",
     icon: <Users className="text-white" size={32} />,
-    gradient: "from-slate-700 via-slate-600 to-orange-400" // Slate to Peach
+    gradient: "from-slate-700 via-slate-600 to-emerald-600" // Slate to Peach
   },
   {
     title: "Equitable Profiling",
@@ -73,7 +73,7 @@ const audiences = [
       "A safe space to ask 'stupid' questions"
     ],
     icon: <GraduationCap size={40} className="text-peach-300" />,
-    color: "orange" // Peach/Orange
+    color: "blue" // Peach/Orange
   },
   {
     emoji: "📈",
@@ -85,7 +85,7 @@ const audiences = [
       "Salary negotiation guidance",
       "0-100 Readiness Scores to build confidence"
     ],
-    icon: <Briefcase size={40} className="text-emerald-400" />,
+    icon: <Briefcase size={40} className="text-emerald-600" />,
     color: "emerald" // Growth Green
   },
   {
@@ -170,13 +170,13 @@ export default function ServicesPage() {
             <span className="text-white/90 text-sm font-bold tracking-wider uppercase">Bridging the Equity Gap with AI</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight" style={{fontFamily: 'Cinzel, serif'}}>
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight" style={{fontFamily: 'Oswald, serif'}}>
             <span className="text-white">
               The Future of Leadership
             </span>
             <br />
             {/* Gradient text now Emerald to Peach */}
-            <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-peach-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-peach-600 bg-clip-text text-transparent">
               Is Human-Centric.
             </span>
           </h1>
@@ -237,7 +237,7 @@ export default function ServicesPage() {
                 <div className={`mb-6 bg-gradient-to-br ${feature.gradient} w-14 h-14 rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-white" style={{fontFamily: 'Cinzel, serif'}}>
+                <h3 className="text-xl font-bold mb-4 text-white" style={{fontFamily: 'Oswald", serif'}}>
                   {feature.title}
                 </h3>
                 <p className="text-white/60 leading-relaxed text-sm">
@@ -253,8 +253,8 @@ export default function ServicesPage() {
       <section className="relative py-20 px-6 bg-slate-900/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6" style={{fontFamily: 'Cinzel, serif'}}>
-              A Co-Pilot for <span className="bg-gradient-to-r from-emerald-400 to-peach-300 bg-clip-text text-transparent">Every Journey</span>
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6" style={{fontFamily: 'Oswald, serif'}}>
+              A Co-Pilot for <span className="bg-gradient-to-r from-emerald-600 to-peach-600 bg-clip-text text-transparent">Every Journey</span>
             </h2>
             <p className="text-white/60 text-xl max-w-2xl mx-auto">
               No matter where you are in your career, Coach Leo adapts to meet you there.
@@ -310,7 +310,7 @@ export default function ServicesPage() {
                   <span className="text-white/50 font-semibold uppercase tracking-wide text-sm">The LeadWise Difference</span>
                 </div>
                 
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white" style={{fontFamily: 'Cinzel, serif'}}>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white" style={{fontFamily: 'Oswald, serif'}}>
                   AI That Listens. <br />
                   <span className="bg-gradient-to-r from-emerald-400 to-peach-300 bg-clip-text text-transparent">Mentorship That Cares.</span>
                 </h2>
@@ -332,7 +332,7 @@ export default function ServicesPage() {
                   
                   <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/5">
                     <div className="bg-peach-400/20 p-2 rounded-lg">
-                       <div className="w-2 h-2 rounded-full bg-peach-400"></div>
+                       <div className="w-2 h-2 rounded-full bg-peach-600"></div>
                     </div>
                     <div>
                       <h4 className="font-bold text-white text-sm">Professional Mode</h4>
@@ -350,18 +350,20 @@ export default function ServicesPage() {
                 </a>
               </div>
               
+              {/* VIDEO SECTION: Updated for better reliability */}
               <div className="relative h-[400px] w-full rounded-2xl overflow-hidden border border-white/10 bg-slate-950 shadow-2xl group">
-                {/* Replaced Static Placeholder with Video */}
                 <video 
-                  src="/image/leo.mp4" 
                   className="w-full h-full object-cover"
                   autoPlay 
                   loop 
                   muted 
-                  playsInline 
-                />
-                {/* Optional subtle overlay to ensure text contrast if you overlay anything, or just to unify the tint */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-emerald-900/10 to-peach-900/10 pointer-events-none"></div>
+                  playsInline
+                >
+                  <source src="/image/leo.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                {/* Overlay for tint integration */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-emerald-900/20 to-peach-900/20 pointer-events-none"></div>
               </div>
             </div>
           </div>
@@ -399,8 +401,8 @@ export default function ServicesPage() {
       {/* FOOTER CTA */}
       <section className="relative py-24 px-6 border-t border-white/5">
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6" style={{fontFamily: 'Cinzel, serif'}}>
-            Ready to Find <span className="bg-gradient-to-r from-emerald-400 to-peach-300 bg-clip-text text-transparent">Your Voice?</span>
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6" style={{fontFamily: 'Oswald, serif'}}>
+            Ready to Find <span className="bg-gradient-to-r from-emerald-400 to-peach-900 bg-clip-text text-transparent">Your Voice?</span>
           </h2>
           
           <p className="text-white/60 text-lg mb-12">
