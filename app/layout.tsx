@@ -1,4 +1,5 @@
 import './globals.css'
+import { Analytics } from '@vercel/analytics/next'
 import { Cinzel, Oswald } from 'next/font/google'
 import type { Metadata, Viewport } from 'next'
 
@@ -38,6 +39,7 @@ export default function RootLayout({
       </head>
       <body className="font-oswald font-sans bg-cream text-navy overflow-x-hidden">
         {children}
+        <Analytics />
       </body>
     </html>
   )
