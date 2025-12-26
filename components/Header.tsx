@@ -1,12 +1,4 @@
 'use client'
-
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import { usePathname } from 'next/navigation'
-import { Menu, X } from 'lucide-react'
-
 const navItems = [
   { href: '#about', label: 'About' },
   { href: '#programs', label: 'Programs' },
@@ -111,43 +103,50 @@ const Header: React.FC = () => {
             </button>
           </div>
 
-          {/* MOBILE MENU */}
-          {mobileOpen && (
-            <div className="md:hidden bg-navy/95 backdrop-blur-md border-t border-white/10 px-6 py-4 space-y-4 absolute left-0 right-0 top-full shadow-xl h-screen">
-              {navItems.map((item) =>
-                item.external ? (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setMobileOpen(false)}
-                    className="block text-cream hover:text-peach font-oswald uppercase tracking-wide text-lg py-2 border-b border-white/5"
-                  >
-                    {item.label}
-                  </a>
-                ) : item.href.startsWith('#') ? (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    onClick={(e) => handleAnchorClick(e, item.href)}
-                    className="block text-cream hover:text-peach font-oswald uppercase tracking-wide text-lg py-2 border-b border-white/5"
-                  >
-                    {item.label}
-                  </a>
-                ) : (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="block text-cream hover:text-peach font-oswald uppercase tracking-wide text-lg py-2 border-b border-white/5"
-                  >
-                    {item.label}
-                  </Link>
-                )
-              )}
-            </div>
-          )}
+          <button
+  className="md:hidden text-cream hover:text-peach"
+  onClick={() => setMobileOpen(!mobileOpen)}
+  aria-label="Toggle menu"
+>
+  {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+</button>
+
+{mobileOpen && (
+  <div className="md:hidden z-50 bg-navy/95 backdrop-blur-md border-t border-white/10 px-6 py-4 space-y-4 absolute left-0 right-0 top-full shadow-xl h-screen">
+    {navItems.map((item) =>
+      item.external ? (
+        <a
+          key={item.href}
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => setMobileOpen(false)}
+          className="block text-cream hover:text-peach font-oswald uppercase tracking-wide text-lg py-2 border-b border-white/5"
+        >
+          {item.label}
+        </a>
+      ) : item.href.startsWith('#') ? (
+        <a
+          key={item.href}
+          href={item.href}
+          onClick={(e) => handleAnchorClick(e, item.href)}
+          className="block text-cream hover:text-peach font-oswald uppercase tracking-wide text-lg py-2 border-b border-white/5"
+        >
+          {item.label}
+        </a>
+      ) : (
+        <Link
+          key={item.href}
+          href={item.href}
+          onClick={() => setMobileOpen(false)}
+          className="block text-cream hover:text-peach font-oswald uppercase tracking-wide text-lg py-2 border-b border-white/5"
+        >
+          {item.label}
+        </Link>
+      )
+    )}
+  </div>
+)}
         </nav>
       </header>
 
