@@ -7,15 +7,22 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 
-// 1. THIS ARRAY CONTROLS YOUR MENU ITEMS
-// Ensure "Services" is listed here for it to appear on the screen.
 const navItems = [
   { href: '#about', label: 'About' },
   { href: '#programs', label: 'Programs' },
   { href: '#impact', label: 'Impact' },
+  {
+    href: 'https://services.letsleadwise.org/resume-builder',
+    label: 'Resume Builder',
+    external: true,
+  },
+  {
+    href: 'https://services.letsleadwise.org/courses',
+    label: 'Free Courses',
+    external: true,
+  },
   { href: '#team', label: 'Team' },
   { href: '#donate', label: 'Donate' },
-  { href: '/services', label: 'Services' }, // <--- THIS LINK WAS LIKELY MISSING
 ]
 
 const Header: React.FC = () => {
@@ -29,23 +36,20 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, target: string) => {
-    // Only intercept navigation for hash links (scroll anchors)
-    if (target.startsWith('#')) {
-      e.preventDefault()
-      const element = document.querySelector(target)
-      if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      setMobileOpen(false)
-    } else {
-      // For standard pages like '/services', let Next.js Link handle it
-      setMobileOpen(false)
-    }
+  const handleAnchorClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    target: string
+  ) => {
+    e.preventDefault()
+    const element = document.querySelector(target)
+    if (element) element.scrollIntoView({ behavior: 'smooth' })
+    setMobileOpen(false)
   }
 
   return (
     <>
       <header
-        className={`fixed w-full top-0 z-50 transition-[background,backdrop-filter] duration-300 ${
+        className={`fixed w-full top-0 z-50 transition-all duration-300 ${
           scrolled ? 'bg-navy/95 backdrop-blur-md' : 'bg-navy'
         }`}
       >
@@ -61,14 +65,24 @@ const Header: React.FC = () => {
               />
             </Link>
 
-            {/* Desktop Menu */}
-            <ul className="hidden md:flex space-x-8">
+            {/* DESKTOP MENU */}
+            <ul className="hidden md:flex space-x-8 items-center">
               {navItems.map((item) => (
-                <li key={item.href}>
-                  {item.href.startsWith('#') ? (
+                <li key={item.label}>
+                  {item.external ? (
                     <a
                       href={item.href}
-                      onClick={(e) => handleNavClick(e, item.href)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-cta={item.label}
+                      className="text-cream hover:text-peach transition-colors duration-300 font-oswald uppercase tracking-wide"
+                    >
+                      {item.label}
+                    </a>
+                  ) : item.href.startsWith('#') ? (
+                    <a
+                      href={item.href}
+                      onClick={(e) => handleAnchorClick(e, item.href)}
                       className="text-cream hover:text-peach transition-colors duration-300 font-oswald uppercase tracking-wide cursor-pointer"
                     >
                       {item.label}
@@ -87,9 +101,9 @@ const Header: React.FC = () => {
               ))}
             </ul>
 
-            {/* Mobile Menu Button */}
+            {/* MOBILE TOGGLE */}
             <button
-              className="md:hidden text-cream hover:text-peach transition-colors"
+              className="md:hidden text-cream hover:text-peach"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
@@ -97,27 +111,36 @@ const Header: React.FC = () => {
             </button>
           </div>
 
-          {/* Mobile Menu */}
+          {/* MOBILE MENU */}
           {mobileOpen && (
             <div className="md:hidden bg-navy/95 backdrop-blur-md border-t border-white/10 px-6 py-4 space-y-4 absolute left-0 right-0 top-full shadow-xl h-screen">
               {navItems.map((item) =>
-                item.href.startsWith('#') ? (
+                item.external ? (
                   <a
-                    key={item.href}
+                    key={item.label}
                     href={item.href}
-                    onClick={(e) => handleNavClick(e, item.href)}
-                    className="block text-cream hover:text-peach transition-colors duration-300 font-oswald uppercase tracking-wide text-lg py-2 border-b border-white/5 last:border-0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setMobileOpen(false)}
+                    className="block text-cream hover:text-peach font-oswald uppercase tracking-wide text-lg py-2 border-b border-white/5"
+                  >
+                    {item.label}
+                  </a>
+                ) : item.href.startsWith('#') ? (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    onClick={(e) => handleAnchorClick(e, item.href)}
+                    className="block text-cream hover:text-peach font-oswald uppercase tracking-wide text-lg py-2 border-b border-white/5"
                   >
                     {item.label}
                   </a>
                 ) : (
                   <Link
-                    key={item.href}
+                    key={item.label}
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className={`block text-cream hover:text-peach transition-colors duration-300 font-oswald uppercase tracking-wide text-lg py-2 border-b border-white/5 last:border-0 ${
-                      pathname === item.href ? 'text-peach font-bold' : ''
-                    }`}
+                    className="block text-cream hover:text-peach font-oswald uppercase tracking-wide text-lg py-2 border-b border-white/5"
                   >
                     {item.label}
                   </Link>
@@ -133,4 +156,4 @@ const Header: React.FC = () => {
   )
 }
 
-export default Header           
+export default Header      
