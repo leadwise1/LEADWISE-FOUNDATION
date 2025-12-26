@@ -1,9 +1,8 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { SpeedInsights } from '@vercel/speed-insights/next'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 
@@ -65,7 +64,7 @@ const Header: React.FC = () => {
               />
             </Link>
 
-            {/* DESKTOP MENU */}
+            {/* Desktop Menu */}
             <ul className="hidden md:flex space-x-8 items-center">
               {navItems.map((item) => (
                 <li key={item.label}>
@@ -100,7 +99,7 @@ const Header: React.FC = () => {
               ))}
             </ul>
 
-            {/* MOBILE TOGGLE */}
+            {/* Mobile Menu Button */}
             <button
               className="md:hidden text-cream hover:text-peach"
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -110,7 +109,7 @@ const Header: React.FC = () => {
             </button>
           </div>
 
-          {/* MOBILE MENU */}
+          {/* Mobile Menu */}
           {mobileOpen && (
             <div className="md:hidden bg-navy/95 backdrop-blur-md border-t border-white/10 px-6 py-4 space-y-4 absolute left-0 right-0 top-full shadow-xl h-screen">
               {navItems.map((item) =>
@@ -139,7 +138,9 @@ const Header: React.FC = () => {
                     key={item.label}
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className="block text-cream hover:text-peach font-oswald uppercase tracking-wide text-lg py-2 border-b border-white/5"
+                    className={`block text-cream hover:text-peach font-oswald uppercase tracking-wide text-lg py-2 border-b border-white/5 ${
+                      pathname === item.href ? 'text-peach font-bold' : ''
+                    }`}
                   >
                     {item.label}
                   </Link>
@@ -149,8 +150,6 @@ const Header: React.FC = () => {
           )}
         </nav>
       </header>
-
-      <SpeedInsights />
     </>
   )
 }
