@@ -11,7 +11,7 @@ const navItems = [
   { href: '#programs', label: 'Programs' },
   { href: '#impact', label: 'Impact' },
   {
-    href: 'https://services.letsleadwise.org/resume-builder',
+    href: 'https://services.letsleadwise.org/templates',
     label: 'Resume Builder',
     external: true,
   },
