@@ -1,4 +1,12 @@
 'use client'
+
+import { useState, useEffect } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import { usePathname } from 'next/navigation'
+import { Menu, X } from 'lucide-react'
+
 const navItems = [
   { href: '#about', label: 'About' },
   { href: '#programs', label: 'Programs' },
