@@ -12,12 +12,12 @@ export interface Review {
   
   export const reviews: Review[] = [
     {
-      id: "1",
-      name: "Maria Rodriguez",
-      title: "Senior Software Engineer",
-      company: "Tech Innovations Inc",
-      content: "LeadWise transformed my career trajectory completely. The leadership skills I gained have been invaluable.",
-      initials: "MR",
+      id: "5",
+      name: "Sara Khan",
+      title: "Operations Manager",
+      company: "NextGen Solutions",
+      content: "LeadWise's programs gave me confidence to speak up and take charge in a world where bureaucracy often silences people.",
+      initials: "SK",
       rating: 5,
       image: "",
     },
@@ -48,16 +48,6 @@ export interface Review {
       company: "Innovate Labs",
       content: "I learned that knowledge isn't just power for me — it's a tool to uplift others. LeadWise showed me how equality starts with education.",
       initials: "TS",
-      rating: 5,
-      image: "",
-    },
-    {
-      id: "5",
-      name: "Sara Khan",
-      title: "Operations Manager",
-      company: "NextGen Solutions",
-      content: "LeadWise's programs gave me confidence to speak up and take charge in a world where bureaucracy often silences people.",
-      initials: "SK",
       rating: 5,
       image: "",
     }
