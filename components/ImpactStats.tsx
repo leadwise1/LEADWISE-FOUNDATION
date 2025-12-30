@@ -15,7 +15,7 @@ const ImpactStats: React.FC = () => {
   // Reminder: Use next/font/google for Oswald and Cinzel in app/layout.tsx to prevent font reflow
 
   const stats: Stat[] = [
-    { number:'2024',label: 'Our Journey Begins' },
+    { number: '2024', label: 'Our Journey Begins' },
     { number: '50+', label: 'Leaders Trained', suffix: '+' },
     { number: '372', label: 'Lives Directly Impacted' },
     { number: '80', label: 'Policy Success Rate', suffix: '%' },
@@ -86,7 +86,7 @@ const ImpactStats: React.FC = () => {
                   <div className="font-cinzel text-3xl lg:text-4xl xl:text-5xl font-bold text-peach mb-2 group-hover:scale-110 transition-transform duration-300">
                     {isVisible 
                       ? `${animatedStats[stat.label] || 0}${stat.suffix || ''}`
-                      : `0${stat.suffix || ''}`
+                      : `${parseInt(stat.number)}${stat.suffix || ''}`
                     }
                   </div>
                 </div>
