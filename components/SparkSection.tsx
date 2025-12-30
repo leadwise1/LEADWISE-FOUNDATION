@@ -54,7 +54,7 @@ const SparkSection: React.FC = () => {
 
           <div className="max-w-4xl mx-auto space-y-8">
             <p className="font-oswald text-lg lg:text-xl leading-relaxed font-light">
-              True innovation happens when every voice is heard. At LeadWise, we address the leaky pipeline in STEM leadership, the glass ceiling in corporate advancement, and the barriers that silence women and marginalized voices. By combining advocacy, mentorship, and leadership training, we are transforming industries and building a future where equity is reality.
+              True innovation happens when every voice is heard. At LeadWise, we address the leaky pipeline in STEM leadership, the glass ceiling in corporate advancement, and the barriers that silence marginalized voices. Talent isn’t rare. Opportunity is.Whether supporting parents navigating career transitions or students working to break cycles of economic hardship, LeadWise provides structured tools, mentorship, and technology-driven pathways that amplify voices too often excluded from traditional systems. Our platform transforms potential into measurable progress—building workforce readiness, leadership capacity, and long-term economic mobility.
             </p>
 
             {/* Donate Button */}
@@ -76,6 +76,7 @@ const SparkSection: React.FC = () => {
                   className="hand-emoji absolute -top-0 left-1/2 -translate-x-1/2 text-3xl animate-pulse-custom
                              text-white drop-shadow-[0_0_10px_rgba(255,214,197,0.8)] pointer-events-none"
                 >
+                 
                   👆
                 </div>
               )}
