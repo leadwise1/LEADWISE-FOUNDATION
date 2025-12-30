@@ -20,6 +20,11 @@ const navItems = [
     label: 'Free Courses',
     external: true,
   },
+  {
+    href: 'https://blog.letsleadwise.org',
+    label: 'Blog',
+    external: true,
+  },
   { href: '#team', label: 'Team' },
   { href: '#donate', label: 'Donate' },
 ]
@@ -65,7 +70,7 @@ const Header: React.FC = () => {
             </Link>
 
             {/* Desktop Menu */}
-            <ul className="hidden md:flex space-x-8 items-center">
+            <ul className="hidden xl:flex space-x-8 items-center">
               {navItems.map((item) => (
                 <li key={item.label}>
                   {item.external ? (
@@ -101,7 +106,7 @@ const Header: React.FC = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden text-cream hover:text-peach"
+              className="xl:hidden text-cream hover:text-peach"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
@@ -111,7 +116,7 @@ const Header: React.FC = () => {
 
           {/* Mobile Menu */}
           {mobileOpen && (
-            <div className="md:hidden bg-navy/95 backdrop-blur-md border-t border-white/10 px-6 py-4 space-y-4 absolute left-0 right-0 top-full shadow-xl h-screen">
+            <div className="xl:hidden bg-navy/95 backdrop-blur-md border-t border-white/10 px-6 py-4 space-y-4 absolute left-0 right-0 top-full shadow-xl h-screen">
               {navItems.map((item) =>
                 item.external ? (
                   <a
