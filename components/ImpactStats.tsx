@@ -15,12 +15,11 @@ const ImpactStats: React.FC = () => {
   // Reminder: Use next/font/google for Oswald and Cinzel in app/layout.tsx to prevent font reflow
 
   const stats: Stat[] = [
+    { number: '50+', label: 'Community Members Engaged', suffix: '+' },
     { number: '2024', label: 'Our Journey Begins' },
-    { number: '50+', label: 'Leaders Trained', suffix: '+' },
-    { number: '372', label: 'Lives Directly Impacted' },
-    { number: '80', label: 'Policy Success Rate', suffix: '%' },
+    { number: '100', label: 'Industry-Aligned Curriculum', suffix: '%' },
     { number: '15', label: 'Partner Organizations', suffix: '+' },
-    { number: '95', label: 'Completion Rate', suffix: '%' }
+    { number: '100', label: 'Tuition Free', suffix: '%' }
   ]
 
   useEffect(() => {
