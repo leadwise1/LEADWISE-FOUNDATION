@@ -75,8 +75,10 @@ const Footer: React.FC = () => {
       {/* Bottom Bar */}
       <div className="border-t border-cream/20 pt-6 text-center font-oswald text-cream/60 text-sm">
         © {new Date().getFullYear()} LeadWise Foundation. All rights reserved.
-        <p className="max-w-xl text-xs text-navy/60 italic animate-fadeInUp">
-         Not affiliated with organizations using similar names in legal or consulting sectors.</p>
+          </p>
+      <p className="max-w-xl text-xs text-navy/60 italic animate-fadeInUp">
+    Not affiliated with organizations using similar names in legal or consulting sectors.
+  </p]
       </div>
     </footer>
   )
