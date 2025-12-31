@@ -19,6 +19,9 @@ const Hero: React.FC = () => {
             <h1 className="font- fashionista text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-navy animate-fadeInUp">
             Education Gives You A Voice. 
             Knowledge Gives You Power!            </h1>
+            <p className="max-w-xl text-xs text-navy/60 italic animate-fadeInUp">
+  Not affiliated with organizations using similar names in legal or consulting sectors.
+</p>
            
             <h4 className="font-oswald text-xl lg:text-1xl font-light text-navy uppercase tracking-wide animate-fadeInUp">
              At Leadwise, we believe education ignites empowerment and courage. We equip individuals with the skills and confidence to overcome challenges and confront inequities. No age, background, or circumstance can limit your potential—your rightful place is wherever you choose to stand. Embrace your journey and unlock limitless possibilities!
@@ -59,14 +62,6 @@ const Hero: React.FC = () => {
                 fill
                 className="object-cover"
               />
-               <p className="max-w-xl text-sm lg:text-base text-navy/80 font-medium animate-fadeInUp">
-  LeadWise Foundation is an early-stage nonprofit building inclusive leadership pathways
-  for underrepresented and first-time leaders through education, mentorship, and technology.
-</p>
-
-<p className="max-w-xl text-xs text-navy/60 italic animate-fadeInUp">
-  Not affiliated with organizations using similar names in legal or consulting sectors.
-</p>
             </div>
           </div>
         </div>
