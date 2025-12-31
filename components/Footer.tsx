@@ -76,9 +76,8 @@ const Footer: React.FC = () => {
       <div className="border-t border-cream/20 pt-6 text-center font-oswald text-cream/60 text-sm">
         © {new Date().getFullYear()} LeadWise Foundation. All rights reserved.
           </p>
-      <p className="max-w-xl text-xs text-peach/60 italic animate-fadeInUp">
-    Not affiliated with organizations using similar names in legal or consulting sectors.
-  </p]
+      <p className="max-w-xl text-xs text-peach/60 pt-6 text-center font-oswald italic animate-fadeInUp">
+          Not affiliated with organizations using similar names in legal or consulting sectors.</p]
       </div>
     </footer>
   )
