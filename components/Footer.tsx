@@ -33,8 +33,8 @@ const Footer: React.FC = () => {
         <div>
           <h4 className="font-cinzel text-lg font-semibold mb-4">Connect With Us</h4>
           <ul className="space-y-2 font-oswald text-cream/80">
-            <li><a href="mailto:info@letsleadwise.org" className="hover:text-peach">info@letsleadwise.org</a></li>
-            <li><a href="tel:+1234567890" className="hover:text-peach">+1 (234) 567-890</a></li>
+            <li><a href="mailto:info@letsleadwise.org" className="hover:text-peach">mentor@letsleadwise.org</a></li>
+            <li><a href="tel:+1234567890" className="hover:text-peach">+1 (469)215-1049</a></li>
             <li><a href="https://twitter.com/letsleadwise" className="hover:text-peach" target="_blank">Twitter</a></li>
             <li><a href="https://linkedin.com/company/letsleadwise" className="hover:text-peach" target="_blank">LinkedIn</a></li>
           </ul>
@@ -75,6 +75,9 @@ const Footer: React.FC = () => {
       {/* Bottom Bar */}
       <div className="border-t border-cream/20 pt-6 text-center font-oswald text-cream/60 text-sm">
         © {new Date().getFullYear()} LeadWise Foundation. All rights reserved.
+        <p className="max-w-xl text-xs text-navy/60 italic animate-fadeInUp">
+  Not affiliated with organizations using similar names in legal or consulting sectors.
+</p>
       </div>
     </footer>
   )
