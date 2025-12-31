@@ -18,8 +18,9 @@ const Hero: React.FC = () => {
           <div className="space-y-8">
             <h1 className="font- fashionista text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-navy animate-fadeInUp">
             Education Gives You A Voice. 
-            Knowledge Gives You Power!            </h1>
+            Knowledge Gives You Power!           </h1>
            
+            
             <h4 className="font-oswald text-xl lg:text-1xl font-light text-navy uppercase tracking-wide animate-fadeInUp">
            At LeadWise, we believe education ignites empowerment. We equip individuals with the technical skills and career confidence to overcome challenges and confront inequities. No age, background, or circumstance limits your potential here. We turn 'limitless possibilities' into measurable financial independence for the future workforce
             </h4>
