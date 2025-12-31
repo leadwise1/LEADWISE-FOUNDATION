@@ -19,12 +19,9 @@ const Hero: React.FC = () => {
             <h1 className="font- fashionista text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-navy animate-fadeInUp">
             Education Gives You A Voice. 
             Knowledge Gives You Power!            </h1>
-            <p className="max-w-xl text-xs text-navy/60 italic animate-fadeInUp">
-  Not affiliated with organizations using similar names in legal or consulting sectors.
-</p>
            
             <h4 className="font-oswald text-xl lg:text-1xl font-light text-navy uppercase tracking-wide animate-fadeInUp">
-             At Leadwise, we believe education ignites empowerment and courage. We equip individuals with the skills and confidence to overcome challenges and confront inequities. No age, background, or circumstance can limit your potential—your rightful place is wherever you choose to stand. Embrace your journey and unlock limitless possibilities!
+           At LeadWise, we believe education ignites empowerment. We equip individuals with the technical skills and career confidence to overcome challenges and confront inequities. No age, background, or circumstance limits your potential here. We turn 'limitless possibilities' into measurable financial independence for the future workforce
             </h4>
             <button
               onClick={handleDonateClick}
