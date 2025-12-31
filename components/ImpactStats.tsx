@@ -118,8 +118,7 @@ const ImpactStats: React.FC = () => {
             Your Voice, <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-peach/80">Our Impact</span>
           </h2>
           <p className="font-oswald text-lg lg:text-xl font-light max-w-2xl mx-auto leading-relaxed text-navy/70">
-            Together, we're creating measurable change in communities across the nation. 
-            Every program participant becomes a catalyst for transformation.
+            As a proud Google Cloud and Workspace Partner, we are creating measurable economic pathways in communities across the nation. Every program participant becomes a skilled catalyst for workforce transformation.
           </p>
         </div>
 
