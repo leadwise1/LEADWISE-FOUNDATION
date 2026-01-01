@@ -1,43 +1,44 @@
 'use client'
 
-// Reminder: Use next/font/google to load Oswald and Cinzel fonts in app/layout.tsx to prevent font reflow and improve CLS stability.
-
 const Programs: React.FC = () => {
   const programs = [
     {
-      title: "Leadership Program",
-      description: "Transform your leadership potential with our evidence-driven programs. We offer comprehensive leadership development, training, and educational strategies to help you overcome challenges and enhance your leadership effectiveness as an empowered leader today."
+      title: "Leadership Development & Training",
+      description: "Our leadership development programs equip emerging and experienced professionals with evidence-based skills, practical frameworks, and real-world strategies to lead with confidence, manage teams effectively, and create impact in diverse environments."
     },
     {
-      title: "Advocacy & Policy Change", 
-      description: "We take on the hard fights because we understand that real change requires structural improvements and systematic education. Our advocacy work centers around increasing access and removing barriers that marginalized people face."
+      title: "Advocacy & Policy Change Initiatives",
+      description: "LeadWise Foundation drives systemic change with our advocacy and policy programs designed to expand access, remove barriers faced by underrepresented communities, and build equitable opportunities through research-backed strategies and community engagement."
     },
     {
-      title: "Career Coaching",
-      description: "We offer resources to empower individuals to take control of their careers. Our programs target advanced, career coaching for a broad range of professionals and others seeking to advance their professional trajectories."
+      title: "Career Coaching & Job Readiness",
+      description: "Our career coaching and job readiness programs help professionals strengthen resumes, master interviews, expand networks, and develop long-term career pathways. We support advancement at every stage of your professional journey."
     }
   ]
 
   const visionPoints = [
     "Every voice is heard",
     "Every potential is realized", 
-    "Every leader possesses the ability to initiate and propel change"
+    "Every leader initiates and sustains lasting change"
   ]
-    return (
+
+  return (
     <section id="programs" className="bg-cream pt-12 pb-12">
       <div className="container-custom">
+        
+        {/* SEO-Friendly Main Heading */}
         <h2 className="font-oswald text-4xl lg:text-5xl font-bold text-center mb-8 text-navy">
-          How We Ignite Leadership & Drive Systemic Change
+          Career Training, Leadership Development & Advocacy Programs
         </h2>
+
+        {/* Intro With Natural Keywords */}
         <p className="font-oswald text-lg lg:text-xl text-center max-w-4xl mx-auto mb-16 text-navy font-light leading-relaxed">
-          One empowered leader at a time. Our tailored programs provide the tools, mentorship, and advocacy needed 
-          to break through barriers and redefine success. With a focus on practical skills and real-world applications, 
-          we ensure that our leaders are not just prepared for opportunities but are also equipped to create them.
+          LeadWise Foundation offers transformational **career training, leadership development**, and **advocacy programs** rooted in real-world applications and designed to accelerate professional growth, expand opportunities, and equip leaders at every stage of their journey.
         </p>
 
         {/* Vision Section */}
         <div className="bg-navy rounded-2xl p-8 max-w-4xl mx-auto mb-16">
-        <h3 className="font-cinzel text-2xl font-bold text-cream text-center mb-6">
+          <h3 className="font-cinzel text-2xl font-bold text-cream text-center mb-6">
             Together, we are building a future where:
           </h3>
           <div className="space-y-4">
@@ -50,26 +51,28 @@ const Programs: React.FC = () => {
           </div>
         </div>
 
-        {/* Programs Grid */}
+        {/* Program Grid With Semantic Structure */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {programs.map((program, index) => (
-            <div
-            key={index}
-            className="bg-gradient-to-br from-peach to-navy/90 border border-peach/10 rounded-2xl p-8 shadow-lg hover:shadow-[0_0_25px_rgba(33,34,64,0.2)] transition-transform duration-300 hover:-translate-y-2 relative overflow-hidden group min-h-[280px]"
-          >
-            <div className="absolute top-0 left-0 right-0 h-1 bg-navy"></div>
-            <h3 className="font-oswald text-xl font-bold text-navy mb-4">
-              {program.title}
-
+            <article
+              key={index}
+              className="bg-gradient-to-br from-peach to-navy/90 border border-peach/10 rounded-2xl p-8 shadow-lg hover:shadow-[0_0_25px_rgba(33,34,64,0.2)] transition-transform duration-300 hover:-translate-y-2 group"
+            >
+              {/* Subheading Including Target Keywords */}
+              <h3 className="font-oswald text-xl font-bold text-navy mb-4">
+                {program.title}
               </h3>
+
+              {/* Descriptive SEO-Rich Paragraph */}
               <p className="font-oswald text-navy/90 leading-relaxed">
-                {program.description}
+                {program.description} These programs strengthen your professional capabilities, expand your network, and support long-term career growth.
               </p>
-            </div>
+            </article>
           ))}
         </div>
       </div>
     </section>
   )
 }
+
 export default Programs
