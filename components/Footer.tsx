@@ -77,7 +77,7 @@ const Footer: React.FC = () => {
         © {new Date().getFullYear()} LeadWise Foundation. All rights reserved.
           </p>
       <p className="max-w-xl text-xs text-peach/60 pt-6 text-center font-oswald italic animate-fadeInUp">
-          Not affiliated with organizations using similar names in legal or consulting sectors.</p]
+             Not affiliated with organizations using similar names in legal or consulting sectors.</p>
       </div>
     </footer>
   )
