@@ -16,8 +16,13 @@ const Footer: React.FC = () => {
               <a href="/" className="hover:text-peach">Home</a>
             </li>
             <li>
-              <a href="https://services.letsleadwise.org" className="hover:text-peach" target="_blank" rel="noopener noreferrer">
-                Workforce & Mentorship Programs
+              <a
+                href="https://services.letsleadwise.org"
+                className="hover:text-peach"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Programs
               </a>
             </li>
             <li>
@@ -34,8 +39,13 @@ const Footer: React.FC = () => {
           <h4 className="font-cinzel text-lg font-semibold mb-4">Resources</h4>
           <ul className="space-y-2 font-oswald text-cream/80">
             <li>
-              <a href="https://blog.letsleadwise.org" className="hover:text-peach" target="_blank" rel="noopener noreferrer">
-                Career Development Blog
+              <a
+                href="https://blog.letsleadwise.org"
+                className="hover:text-peach"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Blog
               </a>
             </li>
             <li>
@@ -108,12 +118,6 @@ const Footer: React.FC = () => {
         </p>
         <p className="max-w-xl mx-auto text-xs text-peach/60 pt-2 italic animate-fadeInUp">
           Not affiliated with organizations using similar names in legal or consulting sectors.
-        </p>
-        <p className="text-xs text-cream/50 mt-2">
-          Official programs and insights at 
-          <a href="https://services.letsleadwise.org" className="underline ml-1" target="_blank" rel="noopener noreferrer">services.letsleadwise.org</a>
-          and
-          <a href="https://blog.letsleadwise.org" className="underline ml-1" target="_blank" rel="noopener noreferrer">blog.letsleadwise.org</a>.
         </p>
       </div>
     </footer>
