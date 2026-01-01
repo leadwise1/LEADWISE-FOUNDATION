@@ -1,44 +1,73 @@
 'use client'
-import Link from 'next/link'
 import Image from 'next/image'
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-navy text-cream py-12 mt-16">
-      {/* Four Columns */}
+    <footer className="bg-navy text-cream py-12 mt-16" aria-labelledby="footer-heading">
+      {/* Hidden heading for accessibility + SEO */}
+      <h2 id="footer-heading" className="sr-only">LeadWise Foundation Footer</h2>
+
       <div className="container-custom grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12">
         {/* Quick Links */}
-        <div>
+        <nav aria-label="LeadWise Quick Links">
           <h4 className="font-cinzel text-lg font-semibold mb-4">Quick Links</h4>
           <ul className="space-y-2 font-oswald text-cream/80">
-            <li><Link href="/about" className="hover:text-peach">About Us</Link></li>
-            <li><Link href="/programs" className="hover:text-peach">Programs</Link></li>
-            <li><Link href="/contact" className="hover:text-peach">Contact</Link></li>
-            <li><Link href="/donate" className="hover:text-peach">Donate</Link></li>
+            <li>
+              <a href="/" className="hover:text-peach">Home</a>
+            </li>
+            <li>
+              <a href="https://services.letsleadwise.org" className="hover:text-peach" target="_blank" rel="noopener noreferrer">
+                Workforce & Mentorship Programs
+              </a>
+            </li>
+            <li>
+              <a href="/contact" className="hover:text-peach">Contact</a>
+            </li>
+            <li>
+              <a href="/donate" className="hover:text-peach">Donate</a>
+            </li>
           </ul>
-        </div>
+        </nav>
 
         {/* Resources */}
-        <div>
+        <nav aria-label="LeadWise Resources">
           <h4 className="font-cinzel text-lg font-semibold mb-4">Resources</h4>
           <ul className="space-y-2 font-oswald text-cream/80">
-            <li><Link href="/blog" className="hover:text-peach">Blog</Link></li>
-            <li><Link href="/events" className="hover:text-peach">Events</Link></li>
-            <li><Link href="/privacy" className="hover:text-peach">Privacy Policy</Link></li>
-            <li><Link href="/terms" className="hover:text-peach">Terms of Service</Link></li>
+            <li>
+              <a href="https://blog.letsleadwise.org" className="hover:text-peach" target="_blank" rel="noopener noreferrer">
+                Career Development Blog
+              </a>
+            </li>
+            <li>
+              <a href="/events" className="hover:text-peach">Events</a>
+            </li>
+            <li>
+              <a href="/privacy" className="hover:text-peach">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="/terms" className="hover:text-peach">Terms of Service</a>
+            </li>
           </ul>
-        </div>
+        </nav>
 
         {/* Connect With Us */}
-        <div>
+        <nav aria-label="Contact and Social Links">
           <h4 className="font-cinzel text-lg font-semibold mb-4">Connect With Us</h4>
           <ul className="space-y-2 font-oswald text-cream/80">
-            <li><a href="mailto:info@letsleadwise.org" className="hover:text-peach">mentor@letsleadwise.org</a></li>
-            <li><a href="tel:+1234567890" className="hover:text-peach">+1 (469)215-1049</a></li>
-            <li><a href="https://twitter.com/letsleadwise" className="hover:text-peach" target="_blank">Twitter</a></li>
-            <li><a href="https://linkedin.com/company/letsleadwise" className="hover:text-peach" target="_blank">LinkedIn</a></li>
+            <li>
+              <a href="mailto:mentor@letsleadwise.org" className="hover:text-peach">mentor@letsleadwise.org</a>
+            </li>
+            <li>
+              <a href="tel:+14692151049" className="hover:text-peach">+1 (469) 215-1049</a>
+            </li>
+            <li>
+              <a href="https://twitter.com/letsleadwise" className="hover:text-peach" target="_blank" rel="noopener noreferrer">Twitter</a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/company/letsleadwise" className="hover:text-peach" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </li>
           </ul>
-        </div>
+        </nav>
 
         {/* Newsletter / Subscribe */}
         <div>
@@ -61,7 +90,7 @@ const Footer: React.FC = () => {
 
       {/* Logo below columns */}
       <div className="text-center mb-6">
-        <Link href="/" aria-label="LeadWise Foundation Home">
+        <a href="/" aria-label="LeadWise Foundation Home">
           <Image
             src="/images/logo.svg"
             alt="LeadWise Foundation Logo"
@@ -69,15 +98,23 @@ const Footer: React.FC = () => {
             height={45}
             className="mx-auto"
           />
-        </Link>
+        </a>
       </div>
 
       {/* Bottom Bar */}
       <div className="border-t border-cream/20 pt-6 text-center font-oswald text-cream/60 text-sm">
-        © {new Date().getFullYear()} LeadWise Foundation. All rights reserved.
-          </p>
-      <p className="max-w-xl text-xs text-peach/60 pt-6 text-center font-oswald italic animate-fadeInUp">
-             Not affiliated with organizations using similar names in legal or consulting sectors.</p>
+        <p>
+          © {new Date().getFullYear()} LeadWise Foundation. All rights reserved.
+        </p>
+        <p className="max-w-xl mx-auto text-xs text-peach/60 pt-2 italic animate-fadeInUp">
+          Not affiliated with organizations using similar names in legal or consulting sectors.
+        </p>
+        <p className="text-xs text-cream/50 mt-2">
+          Official programs and insights at 
+          <a href="https://services.letsleadwise.org" className="underline ml-1" target="_blank" rel="noopener noreferrer">services.letsleadwise.org</a>
+          and
+          <a href="https://blog.letsleadwise.org" className="underline ml-1" target="_blank" rel="noopener noreferrer">blog.letsleadwise.org</a>.
+        </p>
       </div>
     </footer>
   )
