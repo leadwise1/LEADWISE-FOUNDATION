@@ -29,7 +29,7 @@ const ImpactStats: React.FC = () => {
       number: '95', 
       label: 'Our Students', 
       suffix: '%', 
-      icon: Graduation Cap,
+      icon: GraduationCap,
       description: 'completion Rate'
     },
     { 
