@@ -17,8 +17,8 @@ const Hero: React.FC = () => {
           {/* Column 1: Text */}
           <div className="space-y-8">
             <h1 className="font- fashionista text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-navy animate-fadeInUp">
-            Education Gives You A Voice. 
-            Skills Gives You Power! </h1>
+            Education Gives You a Voice. 
+            Skills Give You Power! </h1>
           
             <h3 className="font-oswald text-xl lg:text-1xl font-bold text-navy uppercase tracking-wide animate-fadeInUp">
               As a Google Cloud & Workspace Partner, we bridge the gap between potential and opportunity.
