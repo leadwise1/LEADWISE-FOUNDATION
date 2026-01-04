@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
-import { Users, Calendar, BookOpen, Handshake, Sparkles, LucideIcon } from 'lucide-react'
+import { Users, GraduationCap, Calendar, BookOpen, Handshake, Sparkles, LucideIcon } from 'lucide-react'
 
 interface Stat {
   number: string
