@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
             <h3 className="font-oswald text-xl lg:text-1xl font-bold text-navy uppercase tracking-wide animate-fadeInUp">
               As a Google Cloud & Workspace Partner, we bridge the gap between potential and opportunity.
               </h3>
-           <h4 className="font-oswald text-xl lg:text-1xl font-light text-navy uppercase tracking-wide animate-fadeInUp">
+           <h4 className="font-oswald text-xl lg:text-1xl font-light text-navy tracking-wide animate-fadeInUp">
               At LeadWise, we believe education ignites empowerment. We equip individuals with the technical skills and career confidence to overcome challenges and confront inequities. No age, background, or circumstance limits your potential here. We turn 'limitless possibilities' into measurable financial independence for the future workforce.
             </h4>
             <button
