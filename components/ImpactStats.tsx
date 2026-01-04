@@ -20,38 +20,38 @@ const ImpactStats: React.FC = () => {
   const stats: Stat[] = [
     { 
       number: '50', 
-      label: 'Community Members', 
+      label: 'Leaders Trained', 
       suffix: '+', 
       icon: Users,
       description: 'Engaged & Empowered'
     },
     { 
-      number: '2024', 
-      label: 'Established', 
-      suffix: '', 
-      icon: Calendar,
-      description: 'Our Journey Begins'
+      number: '95', 
+      label: 'Our Students', 
+      suffix: '%', 
+      icon: Graduation Cap,
+      description: 'completion Rate'
     },
     { 
       number: '100', 
       label: 'Curriculum', 
       suffix: '%', 
       icon: BookOpen,
-      description: 'Industry-Aligned'
+      description: 'Tution Free'
     },
     { 
       number: '15', 
-      label: 'Partners', 
+      label: 'Corporate Partners', 
       suffix: '+', 
       icon: Handshake,
       description: 'Top Organizations'
     },
     { 
-      number: '100', 
-      label: 'Tuition Free', 
+      number: '96', 
+      label: 'Interview Rate', 
       suffix: '%', 
       icon: Sparkles,
-      description: 'Accessible to All'
+      description: 'Secures Within 90 Days'
     }
   ]
 
