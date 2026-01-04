@@ -126,14 +126,14 @@ const ImpactStats: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8 mb-20">
           {stats.map((stat, index) => (
             <div
-              key={index}
-              className={group relative transition-all duration-700 ease-out}
-              style={{ 
-                transitionDelay: ${index * 100}ms,
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(2rem)'
-              }}
-            >
+  key={index}
+  className="group relative transition-all duration-700 ease-out"
+  style={{ 
+    transitionDelay: `${index * 100}ms`,
+    opacity: isVisible ? 1 : 0,
+    transform: isVisible ? 'translateY(0)' : 'translateY(2rem)'
+  }}
+>
               {/* Card Container */}
               <div className="h-full bg-white/50 backdrop-blur-sm border border-navy/5 rounded-2xl p-6 hover:bg-white hover:shadow-xl hover:shadow-navy/10 hover:-translate-y-2 transition-all duration-300 flex flex-col items-center justify-center text-center relative overflow-hidden">
                 
