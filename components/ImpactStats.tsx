@@ -109,7 +109,7 @@ const ImpactStats: React.FC = () => {
 
       <div className="container-custom relative z-10 px-4 md:px-8 mx-auto max-w-7xl">
         
-        {/* Header Section */}
+          {/* Header Section */}
         <div className="text-center mb-20">
           <span className="inline-block py-1 px-3 rounded-full bg-navy/5 text-navy font-oswald text-sm tracking-widest uppercase mb-4 border border-navy/10">
             Our Reach
@@ -118,8 +118,7 @@ const ImpactStats: React.FC = () => {
             Your Voice, <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-peach/80">Our Impact</span>
           </h2>
           <p className="font-oswald text-lg lg:text-xl font-light max-w-2xl mx-auto leading-relaxed text-navy/70">
-            As a proud Google Cloud and Workspace Partner, we are creating measurable economic pathways in communities across the nation. Every program participant becomes a skilled catalyst for workforce transformation.
-          </p>
+          Together, we are creating measurable economic pathways in communities across the nation. Every program participant becomes a skilled catalyst for workforce transformation. </p>
         </div>
 
         {/* Stats Grid - 5 Columns for perfect centering */}
@@ -127,9 +126,9 @@ const ImpactStats: React.FC = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className={`group relative transition-all duration-700 ease-out`}
+              className={group relative transition-all duration-700 ease-out}
               style={{ 
-                transitionDelay: `${index * 100}ms`,
+                transitionDelay: ${index * 100}ms,
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(2rem)'
               }}
@@ -148,8 +147,8 @@ const ImpactStats: React.FC = () => {
                 {/* Number */}
                 <div className="font-cinzel text-4xl lg:text-5xl font-bold text-navy mb-2 tracking-tight">
                   {isVisible 
-                    ? `${animatedStats[stat.label] || 0}${stat.suffix || ''}`
-                    : `${stat.number}${stat.suffix || ''}`
+                    ? ${animatedStats[stat.label] || 0}${stat.suffix || ''}
+                    : ${stat.number}${stat.suffix || ''}
                   }
                 </div>
 
@@ -170,7 +169,7 @@ const ImpactStats: React.FC = () => {
         </div>
 
         {/* Bottom Callout / Insight */}
-        <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}}>
           <div className="relative rounded-3xl overflow-hidden bg-navy text-cream p-8 md:p-12 text-center max-w-5xl mx-auto shadow-2xl shadow-navy/20">
             {/* Background Gradient Mesh */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-peach/20 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2"></div>
@@ -196,3 +195,4 @@ const ImpactStats: React.FC = () => {
 }
 
 export default ImpactStats
+      
