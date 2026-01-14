@@ -8,10 +8,12 @@ import { Menu, X } from 'lucide-react'
 
 const navItems = [
   { href: '#about', label: 'About' },
-  { href: '#programs', label: 'Programs' },
-  { href: '#impact', label: 'Impact' },
+  { href: 'https://services.letsleadwise.org', 
+    label: 'Programs',
+    external: true, 
+  },
   {
-    href: 'https://services.letsleadwise.org/templates',
+    href: 'https://services.letsleadwise.org/resume',
     label: 'Resume Builder',
     external: true,
   },
@@ -26,7 +28,10 @@ const navItems = [
     external: true,
   },
   { href: '#team', label: 'Team' },
-  { href: '#donate', label: 'Donate' },
+  { href: 'https://donation.letsleadwise.org', 
+    label: 'Donate',
+    external: true,
+  },
 ]
 
 const Header: React.FC = () => {
