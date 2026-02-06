@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
           © {new Date().getFullYear()} LeadWise Foundation. All rights reserved.
         </p>
         <p className="max-w-xl mx-auto text-xs text-peach/60 pt-2 italic animate-fadeInUp">
-          < 2026 LeadWise Foundation | A 501(c)(3) nonprofit organization, EIN: 39-3296280 | All contributions are tax-deductible to the extent allowed by law.        
+            2026 LeadWise Foundation | A 501(c)(3) nonprofit organization, EIN: 39-3296280 | All contributions are tax-deductible to the extent allowed by law.        
         </p>Not affiliated with organizations using similar names in legal or consulting sectors.
         </p>
       </div>
