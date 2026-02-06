@@ -1,4 +1,5 @@
 import './globals.css'
+import Script from 'next/script'
 import { Cinzel, Oswald } from 'next/font/google'
 import type { Metadata, Viewport } from 'next'
 
@@ -32,9 +33,27 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr" className={`${cinzel.variable} ${oswald.variable}`}>
       <head>
+        {/* Google Tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-FY2TX3SEMV"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-FY2TX3SEMV');
+          `}
+        </Script>
+
         {/* Preconnects for Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className="font-oswald font-sans bg-cream text-navy overflow-x-hidden">
         {children}
