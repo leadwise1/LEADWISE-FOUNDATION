@@ -111,18 +111,25 @@ const Footer: React.FC = () => {
         </a>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-cream/20 pt-6 text-center font-oswald text-cream/60 text-sm">
-        <p>
-          © {new Date().getFullYear()} LeadWise Foundation. All rights reserved.
-        </p>
-        <p className="max-w-xl mx-auto text-xs text-peach/60 pt-2 italic animate-fadeInUp">
-            2026 LeadWise Foundation | A 501(c)(3) nonprofit organization, EIN: 39-3296280 | All contributions are tax-deductible to the extent allowed by law.        
-        </p>Not affiliated with organizations using similar names in legal or consulting sectors.
-        </p>
-      </div>
-    </footer>
-  )
+    {/* Bottom Bar */}
+<div className="border-t border-cream/20 pt-6 text-center font-oswald text-cream/60 text-sm">
+  <p>
+    © {new Date().getFullYear()} LeadWise Foundation. All rights reserved.
+  </p>
+
+  <p className="max-w-xl mx-auto text-xs text-peach/60 pt-2 italic animate-fadeInUp">
+    2026 LeadWise Foundation | A 501(c)(3) nonprofit organization, EIN: 39-3296280 | 
+    All contributions are tax-deductible to the extent allowed by law.
+  </p>
+
+  <p className="text-xs text-cream/50 pt-1">
+    Not affiliated with organizations using similar names in legal or consulting sectors.
+  </p>
+</div>
+
+</footer>
+)
 }
 
+export default Footer
 export default Footer
