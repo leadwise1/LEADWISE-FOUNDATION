@@ -20,7 +20,7 @@
           <div className="space-y-4">
             <div className="relative aspect-[290/300] lg:aspect-[300/300] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/hero2.svg"
+                src="/images/hero2.png"
                 alt="Collaborative Learning"
                 fill
                 className="object-cover"
@@ -28,7 +28,7 @@
             </div>
             <div className="relative aspect-[290/300] lg:aspect-[300/300] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/hero3.svg"
+                src="/images/hero3.png"
                 alt="Mentorship"
                 fill
                 className="object-cover"
