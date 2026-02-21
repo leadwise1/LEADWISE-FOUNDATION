@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
           {/* Column 2: Single Full-Length Image */}
           <div className="relative aspect-[720/600] lg:aspect-[300/600] rounded-2xl overflow-hidden shadow-xl">
             <Image
-              src="/images/hero1.svg"
+              src="/images/hero.png"
               alt="Leadership Development"
               fill
               priority
