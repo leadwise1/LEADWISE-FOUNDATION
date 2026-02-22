@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
 
             <div className="relative aspect-[290/300] lg:aspect-[300/300] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/hero3.web3"
+                src="/images/hero3.webp"
                 alt="Mentorship"
                 fill
                 className="object-cover"
