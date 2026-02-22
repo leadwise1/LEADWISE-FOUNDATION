@@ -2,14 +2,14 @@ import Image from 'next/image'
 
 const Hero: React.FC = () => {
   return (
-    <section className="bg-cream pt-36 lg:pt-40 pb-20">
+    <section className="bg-cream pt-32 pb-20">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-3 gap-8 items-stretch auto-cols-fr">
+        <div className="grid lg:grid-cols-3 gap-8 items-center">
 
           {/* Column 1: Text */}
           <div className="space-y-8">
             <h1 className="font-fashionista text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-navy animate-fadeInUp">
-              Education Gives You a Voice.<br />
+              Education Gives You a Voice.
               Skills Give You Power!
             </h1>
 
@@ -33,8 +33,8 @@ const Hero: React.FC = () => {
             </a>
           </div>
 
-          {/* Column 2: Main Hero Image */}
-          <div className="relative h-full min-h-[420px] rounded-2xl overflow-hidden shadow-xl">
+          {/* Column 2 */}
+          <div className="relative aspect-[720/600] lg:aspect-[300/600] rounded-2xl overflow-hidden shadow-xl">
             <Image
               src="/images/hero.webp"
               alt="Leadership Development"
@@ -44,9 +44,9 @@ const Hero: React.FC = () => {
             />
           </div>
 
-          {/* Column 3: Two stacked images */}
-          <div className="flex flex-col gap-4 h-full">
-            <div className="relative flex-1 min-h-[200px] rounded-2xl overflow-hidden shadow-xl">
+          {/* Column 3 */}
+          <div className="space-y-4">
+            <div className="relative aspect-[290/300] lg:aspect-[300/300] rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/images/hero2.webp"
                 alt="Collaborative Learning"
@@ -54,9 +54,10 @@ const Hero: React.FC = () => {
                 className="object-cover"
               />
             </div>
-            <div className="relative flex-1 min-h-[200px] rounded-2xl overflow-hidden shadow-xl">
+
+            <div className="relative aspect-[290/300] lg:aspect-[300/300] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/hero3.webp"
+                src="/images/hero3.web3"
                 alt="Mentorship"
                 fill
                 className="object-cover"
