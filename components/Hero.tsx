@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
             />
           </div>
 
-          {/* Column 3: Two stacked images */}
+          {/* Column 3: Two stacked images, sharing column height */}
           <div className="flex flex-col gap-4 h-full">
             <div className="relative flex-1 min-h-[200px] rounded-2xl overflow-hidden shadow-xl">
               <Image
