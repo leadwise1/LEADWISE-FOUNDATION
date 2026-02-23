@@ -118,15 +118,14 @@ const Footer: React.FC = () => {
   </p>
 
   <p className="max-w-xl mx-auto text-xs text-peach/60 pt-2 italic animate-fadeInUp">
-    2026 LeadWise Foundation | A 501(c)(3) nonprofit organization, EIN: 39-3296280 | 
-    All contributions are tax-deductible to the extent allowed by law.
+    2026 LeadWise Foundation | A 501(c)(3) nonprofit organization, EIN: 39-3296280.
   </p>
 
   <p className="text-xs text-cream/50 pt-1">
     Not affiliated with organizations using similar names in legal or consulting sectors.
   </p>
+  
 </div>
-
 </footer>
 )
 }
