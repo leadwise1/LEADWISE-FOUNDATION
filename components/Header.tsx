@@ -12,13 +12,13 @@ const navItems = [
     href: 'https://mentors.letsleadwise.org',
     label: 'Mentoring',
     external: true,
-    ariaLabel: 'Explore LeadWise Mentorship Programs (external site)',
+    ariaLabel: 'Join LeadWise Mentorship Programs (external site)',
   },
   { 
     href: 'https://services.letsleadwise.org', 
     label: 'Programs', 
     external: true,
-    ariaLabel: 'View LeadWise Programs (external site)',
+    ariaLabel: 'Explore LeadWise Programs (external site)',
   },
   {
     href: 'https://services.letsleadwise.org/resume',
@@ -153,4 +153,4 @@ const HeaderAndHero: React.FC = () => {
             </div>
           )}
         </nav>
-      </header>
+      </header
