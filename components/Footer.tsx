@@ -29,7 +29,14 @@ const Footer: React.FC = () => {
               <a href="/contact" className="hover:text-peach">Contact</a>
             </li>
             <li>
-              <a href="/donate" className="hover:text-peach">Donate</a>
+              <a
+                href="https://donation.letsleadwise.org/"
+                className="hover:text-peach"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Donate
+              </a>
             </li>
           </ul>
         </nav>
@@ -40,7 +47,7 @@ const Footer: React.FC = () => {
           <ul className="space-y-2 font-oswald text-cream/80">
             <li>
               <a
-                href="https://blog.letsleadwise.org"
+                href="https://blog.letsleadwise.org/"
                 className="hover:text-peach"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -82,6 +89,9 @@ const Footer: React.FC = () => {
         {/* Newsletter / Subscribe */}
         <div>
           <h4 className="font-cinzel text-lg font-semibold mb-4">Subscribe</h4>
+          <p className="text-sm text-cream/80 mb-2">
+            Stay updated on our programs, blogs, and events.
+          </p>
           <form className="flex flex-col space-y-3">
             <input
               type="email"
@@ -111,22 +121,22 @@ const Footer: React.FC = () => {
         </a>
       </div>
 
-    {/* Bottom Bar */}
-<div className="border-t border-cream/20 pt-6 text-center font-oswald text-cream/60 text-sm">
-  <p>
-    © {new Date().getFullYear()} LeadWise Foundation. All rights reserved.
-  </p>
+      {/* Bottom Bar */}
+      <div className="border-t border-cream/20 pt-6 text-center font-oswald text-cream/60 text-sm space-y-2">
+        <p>
+          © {new Date().getFullYear()} LeadWise Foundation. All rights reserved.
+        </p>
 
-  <p className="max-w-xl mx-auto text-xs text-peach/60 pt-2 italic animate-fadeInUp">
-    2026 LeadWise Foundation | A 501(c)(3) nonprofit organization, EIN: 39-3296280.
-  </p>
+        <p className="max-w-xl mx-auto text-xs text-peach/60 italic animate-fadeInUp">
+          LeadWise Foundation is a 501(c)(3) nonprofit empowering learners through free career training, mentorship, and community support. EIN: 39-3296280.
+        </p>
 
-  <p className="text-xs text-cream/50 pt-1">
-    Not affiliated with organizations using similar names in legal or consulting sectors.
-  </p>
-  
-</div>
-</footer>
-)
+        <p className="text-xs text-cream/50">
+          Not affiliated with organizations using similar names in legal or consulting sectors.
+        </p>
+      </div>
+    </footer>
+  )
 }
+
 export default Footer
