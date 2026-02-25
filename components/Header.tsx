@@ -6,8 +6,14 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 
+// Navigation items
 const navItems = [
-  { href: '#about', label: 'About LeadWise Foundation' },
+  {
+    href: 'https://mentors.letsleadwise.org',
+    label: 'Mentoring',
+    external: true,
+    ariaLabel: 'Explore LeadWise Mentorship Programs (external site)',
+  },
   { 
     href: 'https://services.letsleadwise.org', 
     label: 'Programs', 
@@ -32,7 +38,6 @@ const navItems = [
     external: true,
     ariaLabel: 'Read LeadWise Blog (external site)',
   },
-  { href: '#team', label: 'Team' },
   { 
     href: 'https://donation.letsleadwise.org', 
     label: 'Donate', 
@@ -41,7 +46,7 @@ const navItems = [
   },
 ]
 
-const Header: React.FC = () => {
+const HeaderAndHero: React.FC = () => {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const pathname = usePathname()
@@ -52,18 +57,9 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const handleAnchorClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    target: string
-  ) => {
-    e.preventDefault()
-    const element = document.querySelector(target)
-    if (element) element.scrollIntoView({ behavior: 'smooth' })
-    setMobileOpen(false)
-  }
-
   return (
     <>
+      {/* ===== HEADER ===== */}
       <header
         className={`fixed w-full top-0 z-50 transition-all duration-300 ${
           scrolled ? 'bg-navy/95 backdrop-blur-md' : 'bg-navy'
@@ -71,7 +67,7 @@ const Header: React.FC = () => {
       >
         <nav className="container-custom">
           <div className="flex justify-between items-center py-4">
-            {/* Logo + Mission Tagline */}
+            {/* Logo + Tagline */}
             <div>
               <Link href="/" aria-label="LeadWise Foundation Home">
                 <Image
@@ -89,9 +85,9 @@ const Header: React.FC = () => {
 
             {/* Desktop Menu */}
             <ul className="hidden xl:flex space-x-8 items-center">
-              {navItems.map((item) => (
-                <li key={item.label}>
-                  {item.external ? (
+              {navItems.map((item) =>
+                item.external ? (
+                  <li key={item.label}>
                     <a
                       href={item.href}
                       target="_blank"
@@ -101,15 +97,9 @@ const Header: React.FC = () => {
                     >
                       {item.label}
                     </a>
-                  ) : item.href.startsWith('#') ? (
-                    <a
-                      href={item.href}
-                      onClick={(e) => handleAnchorClick(e, item.href)}
-                      className="text-cream hover:text-peach transition-colors duration-300 font-oswald uppercase tracking-wide cursor-pointer"
-                    >
-                      {item.label}
-                    </a>
-                  ) : (
+                  </li>
+                ) : (
+                  <li key={item.label}>
                     <Link
                       href={item.href}
                       className={`text-cream hover:text-peach transition-colors duration-300 font-oswald uppercase tracking-wide ${
@@ -118,9 +108,9 @@ const Header: React.FC = () => {
                     >
                       {item.label}
                     </Link>
-                  )}
-                </li>
-              ))}
+                  </li>
+                )
+              )}
             </ul>
 
             {/* Mobile Menu Button */}
@@ -149,23 +139,12 @@ const Header: React.FC = () => {
                   >
                     {item.label}
                   </a>
-                ) : item.href.startsWith('#') ? (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    onClick={(e) => handleAnchorClick(e, item.href)}
-                    className="block text-cream hover:text-peach font-oswald uppercase tracking-wide text-lg py-2 border-b border-white/5"
-                  >
-                    {item.label}
-                  </a>
                 ) : (
                   <Link
                     key={item.label}
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className={`block text-cream hover:text-peach font-oswald uppercase tracking-wide text-lg py-2 border-b border-white/5 ${
-                      pathname === item.href ? 'text-peach font-bold' : ''
-                    }`}
+                    className="block text-cream hover:text-peach font-oswald uppercase tracking-wide text-lg py-2 border-b border-white/5"
                   >
                     {item.label}
                   </Link>
@@ -175,8 +154,3 @@ const Header: React.FC = () => {
           )}
         </nav>
       </header>
-    </>
-  )
-}
-
-export default Header
