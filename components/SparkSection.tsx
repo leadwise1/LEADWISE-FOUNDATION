@@ -30,9 +30,9 @@ const SparkSection: React.FC = () => {
 
       <section className="bg-navy text-cream py-20">
         <div className="container-custom text-center">
-          <h1 className="font-oswald text-4xl lg:text-5xl font-bold mb-12">
+          <h2 className="font-oswald text-4xl lg:text-5xl font-bold mb-12">
             The Spark Of Change
-          </h1>
+          </h2>
 
           <div className="relative max-w-4xl mx-auto mb-12 h-96 rounded-2xl overflow-hidden shadow-2xl">
             <Image

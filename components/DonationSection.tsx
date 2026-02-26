@@ -51,9 +51,9 @@ export default function DonationPage() {
     <section className="bg-cream text-navy py-20">
       <div className="container-custom mx-auto px-4 max-w-7xl">
         <div className="text-center mb-16">
-          <h1 className="font-cinzel text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="font-cinzel text-4xl lg:text-5xl font-bold mb-6">
             Bridge the Gap to Opportunity
-          </h1>
+          </h2>
           <p className="font-oswald text-lg text-navy/70 max-w-2xl mx-auto leading-relaxed">
             LeadWise is a 501(c)(3) nonprofit. Your tax-deductible gift directly funds 
             the certifications and mentorship that launch careers.
@@ -112,7 +112,7 @@ export default function DonationPage() {
         <div className="bg-white rounded-3xl shadow-xl border border-navy/5 p-8 md:p-12 max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="font-cinzel text-3xl font-bold mb-4">One-Time Support</h2>
+              <h3 className="font-cinzel text-3xl font-bold mb-4">One-Time Support</h3>
               <p className="font-oswald text-navy/60 mb-6">
                 Prefer a single contribution? Your support fuels immediate access to leadership tools for our students.
               </p>

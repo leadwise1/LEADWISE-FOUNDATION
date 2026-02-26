@@ -8,13 +8,15 @@ import { Analytics } from "@vercel/analytics/next"
 const cinzel = Cinzel({ 
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
-  variable: '--font-cinzel'
+  variable: '--font-cinzel',
+  display: 'swap',
 })
 
 const oswald = Oswald({ 
   subsets: ['latin'],
   weight: ['300', '400', '500', '600'],
-  variable: '--font-oswald'
+  variable: '--font-oswald',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -34,15 +36,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" dir="ltr" className={`${cinzel.variable} ${oswald.variable}`}>
-      <head>
-        {/* Preconnects for Google Fonts */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-      </head>
+      <head />
 
       <body className="font-oswald font-sans bg-cream text-navy overflow-x-hidden">
 

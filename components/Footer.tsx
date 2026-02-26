@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
       <div className="container-custom grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12">
         {/* Quick Links */}
         <nav aria-label="LeadWise Quick Links">
-          <h4 className="font-cinzel text-lg font-semibold mb-4">Quick Links</h4>
+          <h3 className="font-cinzel text-lg font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2 font-oswald text-cream/80">
             <li>
               <a href="/" className="hover:text-peach">Home</a>
@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
 
         {/* Resources */}
         <nav aria-label="LeadWise Resources">
-          <h4 className="font-cinzel text-lg font-semibold mb-4">Resources</h4>
+          <h3 className="font-cinzel text-lg font-semibold mb-4">Resources</h3>
           <ul className="space-y-2 font-oswald text-cream/80">
             <li>
               <a
@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
 
         {/* Connect With Us */}
         <nav aria-label="Contact and Social Links">
-          <h4 className="font-cinzel text-lg font-semibold mb-4">Connect With Us</h4>
+          <h3 className="font-cinzel text-lg font-semibold mb-4">Connect With Us</h3>
           <ul className="space-y-2 font-oswald text-cream/80">
             <li>
               <a href="mailto:mentor@letsleadwise.org" className="hover:text-peach">mentor@letsleadwise.org</a>
@@ -95,7 +95,7 @@ const Footer: React.FC = () => {
 
         {/* Newsletter / Subscribe */}
         <div>
-          <h4 className="font-cinzel text-lg font-semibold mb-4">Subscribe</h4>
+          <h3 className="font-cinzel text-lg font-semibold mb-4">Subscribe</h3>
           <p className="text-sm text-cream/80 mb-2">
             Stay updated on our programs, blogs, and events.
           </p>
@@ -146,7 +146,7 @@ const Footer: React.FC = () => {
           © {new Date().getFullYear()} LeadWise Foundation. All rights reserved.
         </p>
 
-        <p className="max-w-xl mx-auto text-xs text-peach/60 italic animate-fadeInUp">
+        <p className="max-w-xl mx-auto text-xs text-peach/80 italic animate-fadeInUp">
           LeadWise Foundation is a 501(c)(3) nonprofit EIN: 39-3296280.
         </p>
 
