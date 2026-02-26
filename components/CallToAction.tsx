@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { ArrowRight, CheckCircle, Users, Target, Zap } from 'lucide-react'
+import { ArrowRight, CheckCircle, Users, Target, Zap, ShieldCheck } from 'lucide-react'
 
 const CallToAction: React.FC = () => {
   const [email, setEmail] = useState('')
@@ -9,39 +9,13 @@ const CallToAction: React.FC = () => {
 
   const handleEmailSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Email submitted:', email)
+    // Connect this to your newsletter service (e.g., Mailchimp, Brevo)
     setIsSubmitted(true)
     setTimeout(() => {
       setIsSubmitted(false)
       setEmail('')
     }, 3000)
   }
-
-  const handleDonateClick = () => {
-    window.open('https://donate.leadwise.org', '_blank')
-  }
-
-  const handleProgramsClick = () => {
-    console.log('Learn More About Programs clicked')
-  }
-
-  const features = [
-    {
-      icon: <Users className="w-6 h-6" />,
-      title: 'Join Our Community',
-      description: 'Connect with like-minded leaders and change-makers',
-    },
-    {
-      icon: <Target className="w-6 h-6" />,
-      title: 'Achieve Your Goals',
-      description: 'Get personalized mentorship and career guidance',
-    },
-    {
-      icon: <Zap className="w-6 h-6" />,
-      title: 'Create Impact',
-      description: 'Transform your industry and community',
-    },
-  ]
 
   return (
     <section
@@ -52,7 +26,6 @@ const CallToAction: React.FC = () => {
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-32 h-32 bg-peach rounded-full blur-xl" />
         <div className="absolute bottom-10 right-10 w-40 h-40 bg-cream rounded-full blur-xl" />
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-peach rounded-full blur-lg" />
       </div>
 
       <div className="container-custom relative z-10">
@@ -62,60 +35,46 @@ const CallToAction: React.FC = () => {
             <div className="inline-flex items-center bg-peach/20 border border-peach/30 rounded-full px-4 py-2 mb-6">
               <Zap className="w-4 h-4 text-peach mr-2" />
               <span className="font-oswald text-sm uppercase tracking-wide text-peach">
-                Ready to Lead?
+                Join the Network
               </span>
             </div>
 
-            <h2 className="font-Cardo text-4xl lg:text-5xl xl:text-6xl font-semibold mb-6 leading-tight">
-              Your Gift Today Opens Doors For Tomorrow’s Leaders
+            <h2 className="font-cinzel text-4xl lg:text-5xl font-semibold mb-6 leading-tight">
+              Empowerment Starts With a Connection
             </h2>
 
-            <p className="font-Amoresa text-lg lg:text-xl font-light leading-relaxed mb-8 text-cream/90">
-              Your gift fuels leadership equity and workforce empowerment. Each
-              contribution supports mentorship programs, advocacy work, and
-              training initiatives that ensure underrepresented voices are not
-              just included—but leading the future of tech, education, and
-              beyond.
+            <p className="font-oswald text-lg lg:text-xl font-light leading-relaxed mb-8 text-cream/90">
+              Whether you are looking for guidance or ready to give back, our mentorship 
+              platform connects emerging talent with industry leaders to break 
+              barriers in STEM.
             </p>
 
-            {/* FEATURES */}
-            <div className="space-y-4 mb-10">
-              {features.map((feature, index) => (
-                <div key={index} className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 bg-peach/20 p-2 rounded-lg text-peach">
-                    {feature.icon}
-                  </div>
-                  <div>
-                    <h3 className="font-cinzel font-bold text-lg text-cream mb-1">
-                      {feature.title}
-                    </h3>
-                    <p className="font-oswald text-cream/80 font-light">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* CTA BUTTONS */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                onClick={handleDonateClick}
-                className="bg-peach text-navy px-8 py-4 rounded-full font-oswald font-semibold text-lg hover:bg-cream hover:text-navy transition-all duration-300 flex items-center justify-center group shadow-xl hover:shadow-2xl hover:-translate-y-1"
-              >
-                Support Our Mission
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
-
+            {/* INTEGRATED BUTTONS */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <a
-                href="https://services.letsleadwise.org/"
+                href="https://mentors.letsleadwise.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={handleProgramsClick}
+                className="bg-peach text-navy px-8 py-4 rounded-full font-oswald font-semibold text-lg hover:bg-cream transition-all duration-300 flex items-center justify-center group shadow-xl"
+              >
+                Find a Mentor
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </a>
+
+              <a
+                href="https://donation.letsleadwise.org"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="border-2 border-cream text-cream px-8 py-4 rounded-full font-oswald font-bold text-lg hover:bg-cream hover:text-navy transition-all duration-300 inline-block text-center"
               >
-                Learn More About Programs
+                Donate to the Mission
               </a>
+            </div>
+
+            {/* TRUST SIGNAL FOR AD GRANTS */}
+            <div className="flex items-center gap-2 text-peach/60 text-xs italic">
+                <ShieldCheck size={16} />
+                <span>LeadWise Foundation is a registered 501(c)(3) nonprofit. EIN: 39-3296280.</span>
             </div>
           </div>
 
@@ -123,21 +82,17 @@ const CallToAction: React.FC = () => {
           <div className="bg-cream/95 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-2xl">
             <div className="text-center mb-8">
               <h3 className="font-oswald text-2xl lg:text-3xl font-semibold text-navy mb-4">
-                Get Exclusive Leadership Insights
+                Get Leadership Updates
               </h3>
               <p className="font-oswald text-navy/80 font-light leading-relaxed">
-                Join our newsletter for weekly leadership tips, success stories,
-                and early access to new programs.
+                Stay updated on our latest programs, free courses, and impact stories.
               </p>
             </div>
 
             {!isSubmitted ? (
               <form onSubmit={handleEmailSubmit} className="space-y-6">
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block font-oswald font-medium text-navy mb-2"
-                  >
+                  <label htmlFor="email" className="block font-oswald font-medium text-navy mb-2">
                     Email Address
                   </label>
                   <input
@@ -146,58 +101,26 @@ const CallToAction: React.FC = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="your.email@example.com"
-                    className="w-full px-4 py-3 border-2 border-navy/20 rounded-xl focus:border-peach focus:outline-none transition-colors duration-300 font-oswald"
+                    className="w-full px-4 py-3 border-2 border-navy/20 rounded-xl focus:border-peach focus:outline-none transition-colors font-oswald"
                     required
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-navy text-cream px-6 py-3 rounded-xl font-oswald font-semibold hover:bg-navy/90 transition-all duration-300 flex items-center justify-center group"
+                  className="w-full bg-navy text-cream px-6 py-3 rounded-xl font-oswald font-semibold hover:bg-navy/90 transition-all flex items-center justify-center group"
                 >
                   Join Our Community
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </button>
-
-                <p className="text-center font-oswald text-sm text-navy/60">
-                  No spam. Unsubscribe anytime. Your privacy is important to us.
-                </p>
               </form>
             ) : (
               <div className="text-center py-8">
                 <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                <h3 className="font-cinzel text-2xl font-semibold text-navy mb-2">
-                  Welcome to the Community!
-                </h3>
-                <p className="font-oswald text-navy/80">
-                  Check your inbox for a welcome message with exclusive
-                  resources.
-                </p>
+                <h3 className="font-cinzel text-2xl font-semibold text-navy mb-2">Welcome!</h3>
+                <p className="font-oswald text-navy/80">You have successfully joined our leadership circle.</p>
               </div>
             )}
-
-            {/* SOCIAL PROOF */}
-            <div className="mt-8 pt-6">
-              <div className="flex items-center justify-center space-x-6 text-center">
-                <div>
-                  <div className="font-cinzel text-2xl font-bold text-navy">
-                    2.5K+
-                  </div>
-                  <div className="font-oswald text-sm text-navy/70 uppercase tracking-wide">
-                    Newsletter Subscribers
-                  </div>
-                </div>
-                <div className="w-px h-12 bg-navy/20" />
-                <div>
-                  <div className="font-cinzel text-2xl font-bold text-navy">
-                    98%
-                  </div>
-                  <div className="font-oswald text-sm text-navy/70 uppercase tracking-wide">
-                    Open Rate
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
