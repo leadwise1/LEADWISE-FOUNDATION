@@ -133,10 +133,9 @@ const Footer: React.FC = () => {
           <Image
             src="/images/logo.svg"
             alt="LeadWise Foundation Logo"
-            width={180}
-            height={45}
-            className="mx-auto"
-            style={{ width: 'auto', height: 'auto' }}
+            width={160}
+            height={48}
+            className="mx-auto h-12 w-auto"
           />
         </a>
       </div>
