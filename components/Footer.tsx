@@ -135,8 +135,7 @@ const Footer: React.FC = () => {
             alt="LeadWise Foundation Logo"
             width={180}
             height={45}
-            className="mx-auto"
-            style={{ width: 'auto', height: 'auto' }}
+            className="mx-auto h-11 w-auto"
           />
         </a>
       </div>
