@@ -1,7 +1,23 @@
 'use client'
 import Image from 'next/image'
+import { useState } from 'react'
+import { CheckCircle } from 'lucide-react'
 
 const Footer: React.FC = () => {
+  const [email, setEmail] = useState('')
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault()
+    // This is a mock submission. You would connect this to a newsletter service.
+    console.log('Subscribing email:', email)
+    setIsSubmitted(true)
+    setTimeout(() => {
+      setIsSubmitted(false)
+      setEmail('')
+    }, 4000)
+  }
+
   return (
     <footer className="bg-navy text-cream py-12 mt-16" aria-labelledby="footer-heading">
       {/* Hidden heading for accessibility + SEO */}
@@ -83,19 +99,31 @@ const Footer: React.FC = () => {
           <p className="text-sm text-cream/80 mb-2">
             Stay updated on our programs, blogs, and events.
           </p>
-          <form className="flex flex-col space-y-3">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="px-4 py-2 rounded-md bg-cream text-navy focus:outline-none focus:ring-2 focus:ring-peach w-full"
-            />
-            <button
-              type="submit"
-              className="bg-peach text-navy px-4 py-2 rounded-md font-semibold hover:bg-cream hover:text-navy transition-all duration-300"
-            >
-              Subscribe
-            </button>
-          </form>
+          {!isSubmitted ? (
+            <form onSubmit={handleSubscribe} className="flex flex-col space-y-3">
+              <input
+                type="email"
+                placeholder="Your email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="px-4 py-2 rounded-md bg-cream text-navy focus:outline-none focus:ring-2 focus:ring-peach w-full font-oswald"
+                aria-label="Email for newsletter"
+              />
+              <button
+                type="submit"
+                className="bg-peach text-navy px-4 py-2 rounded-md font-oswald font-semibold hover:bg-cream hover:text-navy transition-all duration-300"
+              >
+                Subscribe
+              </button>
+            </form>
+          ) : (
+            <div className="text-center bg-cream/10 rounded-md p-4 transition-all duration-300">
+              <CheckCircle className="w-8 h-8 text-green-400 mx-auto mb-2" />
+              <h5 className="font-oswald font-semibold text-peach">Thank You!</h5>
+              <p className="text-sm text-cream/80">You're on the list.</p>
+            </div>
+          )}
         </div>
       </div>
 
