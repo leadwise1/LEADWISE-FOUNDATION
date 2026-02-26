@@ -30,9 +30,9 @@ const Hero: React.FC = () => {
             </h3>
 
             <h4 className="font-oswald text-lg font-light text-navy tracking-wide animate-fadeInUp">
-              At LeadWise, we believe education ignites empowerment. We equip individuals with the technical
-              skills and career confidence to overcome challenges and confront inequities. No age, background,
-              or circumstance limits your potential here.
+              At LeadWise Foundation, we believe that for many, help arrives too late. We eliminate
+              the "friction addiction" of traditional programs to provide underrepresented professionals 
+              with immediate access to technical skills, leadership training, and corporate advocacy.
             </h4>
 
             {/* CTA Buttons */}

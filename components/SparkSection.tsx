@@ -44,9 +44,9 @@ const SparkSection: React.FC = () => {
           </div>
 
           <div className="max-w-4xl mx-auto space-y-8">
-            <p className="font-oswald text-lg lg:text-xl leading-relaxed font-light">
-              True innovation happens when every voice is heard. At LeadWise, we address the leaky pipeline in STEM leadership, the glass ceiling in corporate advancement, and the barriers that silence marginalized voices. Talent isn’t rare. Opportunity is. Whether supporting parents navigating career transitions or students working to break cycles of economic hardship, LeadWise provides structured tools, mentorship, and technology-driven pathways that amplify voices too often excluded from traditional systems. Our platform transforms potential into measurable progress—building workforce readiness, leadership capacity, and long-term economic mobility.
-            </p>
+          <p className="font-oswald text-lg lg:text-xl leading-relaxed font-light">
+            True innovation happens when every voice is heard—but most systems are designed to keep those voices out. At LeadWise, we address the 'leaky pipeline' by removing the obstacles that silence talent. Whether you are a parent transitioning careers or a student breaking cycles of economic hardship, we don't just offer 'help.' We offer a platform that transforms your existing potential into measurable economic power.           
+           </p>
 
             {/* Services Button */}
             <div className="relative inline-block group">

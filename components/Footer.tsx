@@ -26,9 +26,6 @@ const Footer: React.FC = () => {
               </a>
             </li>
             <li>
-              <a href="/contact" className="hover:text-peach">Contact</a>
-            </li>
-            <li>
               <a
                 href="https://donation.letsleadwise.org/"
                 className="hover:text-peach"
@@ -56,9 +53,6 @@ const Footer: React.FC = () => {
               </a>
             </li>
             <li>
-              <a href="/events" className="hover:text-peach">Events</a>
-            </li>
-            <li>
               <a href="/ai-policy" className="hover:text-peach">Privacy Policy</a>
             </li>
             <li>
@@ -78,10 +72,7 @@ const Footer: React.FC = () => {
               <a href="tel:+14692151049" className="hover:text-peach">+1 (469) 215-1049</a>
             </li>
             <li>
-              <a href="https://twitter.com/letsleadwise" className="hover:text-peach" target="_blank" rel="noopener noreferrer">Twitter</a>
-            </li>
-            <li>
-              <a href="https://linkedin.com/company/letsleadwise" className="hover:text-peach" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/leadwisejvc" className="hover:text-peach" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </li>
           </ul>
         </nav>
@@ -128,7 +119,7 @@ const Footer: React.FC = () => {
         </p>
 
         <p className="max-w-xl mx-auto text-xs text-peach/60 italic animate-fadeInUp">
-          LeadWise Foundation is a 501(c)(3) nonprofit empowering learners through free career training, mentorship, and community support. EIN: 39-3296280.
+          LeadWise Foundation is a 501(c)(3) nonprofit EIN: 39-3296280.
         </p>
 
         <p className="text-xs text-cream/50">
