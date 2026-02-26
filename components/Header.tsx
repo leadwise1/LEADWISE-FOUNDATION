@@ -44,7 +44,7 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center py-4">
           <div>
             <Link href="/" aria-label="LeadWise Foundation Home">
-              <Image src="/images/logo.svg" alt="LeadWise Foundation Logo" width={80} height={45} priority />
+              <Image src="/images/logo.svg" alt="LeadWise Foundation Logo" width={80} height={45} style={{ width: 'auto', height: 'auto' }} priority />
             </Link>
             <p className="text-xs text-cream/80 mt-1">
               Empowering learners with free career programs and mentorship

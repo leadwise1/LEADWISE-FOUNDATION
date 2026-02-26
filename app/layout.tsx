@@ -35,10 +35,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" dir="ltr" className={`${cinzel.variable} ${oswald.variable}`}>
+    <html lang="en" dir="ltr" className={`${cinzel.variable} ${oswald.variable}`} suppressHydrationWarning>
       <head />
 
-      <body className="font-oswald font-sans bg-cream text-navy overflow-x-hidden">
+      <body className="font-oswald font-sans bg-cream text-navy overflow-x-hidden" suppressHydrationWarning>
 
         {/* Google Analytics */}
         <Script
