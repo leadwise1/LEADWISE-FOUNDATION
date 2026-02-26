@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
              Education Gives You a Voice. Skills Give You Power!
             </h1>
 
-            <p className="font-oswald text-xl lg:text-xl font-bold text-navy uppercase tracking-wide animate-fadeInUp" role="heading" aria-level="2">
+            <p className="font-oswald text-xl lg:text-xl font-bold text-navy uppercase tracking-wide animate-fadeInUp" role="heading" aria-level={2}>
               As a Google Cloud & Workspace Partner, we bridge the gap between potential and opportunity.
             </p>
 
