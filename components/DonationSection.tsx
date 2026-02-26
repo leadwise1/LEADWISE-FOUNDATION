@@ -50,25 +50,40 @@ export default function DonationPage() {
           Your contribution directly funds the certifications and tools that launch careers. Help us build a tech industry that truly reflects our communities.
         </p>
 
-        {/* Membership Tiers */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {membershipTiers.map((tier, idx) => (
-            <div key={idx} className="bg-white/50 p-8 rounded-2xl shadow-lg border border-navy/10 flex flex-col justify-between">
-              <h3 className="font-cinzel text-2xl font-bold mb-2">{tier.title}</h3>
-              <p className="font-oswald text-lg text-navy/80 mb-4">{tier.amount}</p>
-              <ul className="list-disc list-inside mb-6 font-oswald text-navy/80 space-y-2">
-                {tier.benefits.map((benefit, bIdx) => <li key={bIdx}>{benefit}</li>)}
-              </ul>
-              <a
-                href="https://donation.letsleadwise.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-auto w-full text-center bg-peach text-navy px-6 py-3 rounded-xl font-oswald font-semibold text-lg hover:bg-peach/80 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                {tier.cta}
-              </a>
-            </div>
-          ))}
+        {/* Main Grid: Image + Membership Tiers */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-12">
+          {/* Left Image */}
+          <div className="relative h-80 lg:h-full">
+            <Image
+              src="/images/donation.svg"
+              alt="Empowerment and change illustration"
+              fill
+              className="object-contain"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          {/* Membership Tiers */}
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
+            {membershipTiers.map((tier, idx) => (
+              <div key={idx} className="bg-white/50 p-8 rounded-2xl shadow-lg border border-navy/10 flex flex-col justify-between">
+                <h3 className="font-cinzel text-2xl font-bold mb-2">{tier.title}</h3>
+                <p className="font-oswald text-lg text-navy/80 mb-4">{tier.amount}</p>
+                <ul className="list-disc list-inside mb-6 font-oswald text-navy/80 space-y-2">
+                  {tier.benefits.map((benefit, bIdx) => <li key={bIdx}>{benefit}</li>)}
+                </ul>
+                <a
+                  href="https://donation.letsleadwise.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto w-full text-center bg-peach text-navy px-6 py-3 rounded-xl font-oswald font-semibold text-lg hover:bg-peach/80 transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  {tier.cta}
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* One-Time Support */}
