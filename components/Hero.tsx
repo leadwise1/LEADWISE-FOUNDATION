@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
           {/* Column 1: Text */}
           <div className="space-y-6 lg:space-y-8">
             <h1 className="font-fashionista text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-navy animate-fadeInUp">
-              LeadWise Foundation: Education Gives You a Voice. Skills Give You Power!
+             Education Gives You a Voice. Skills Give You Power!
             </h1>
 
             <h3 className="font-oswald text-xl lg:text-xl font-bold text-navy uppercase tracking-wide animate-fadeInUp">
