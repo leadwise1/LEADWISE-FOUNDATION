@@ -153,4 +153,9 @@ const HeaderAndHero: React.FC = () => {
             </div>
           )}
         </nav>
-      </header
+      </header>
+    </>
+  )
+}
+
+export default Header
