@@ -2,6 +2,8 @@ import Script from 'next/script'
 import './globals.css'
 import { Cinzel, Oswald } from 'next/font/google'
 import type { Metadata, Viewport } from 'next'
+import { Analytics } from "@vercel/analytics/next"
+
 
 const cinzel = Cinzel({ 
   subsets: ['latin'],
@@ -32,36 +34,37 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" dir="ltr" className={`${cinzel.variable} ${oswald.variable}`}>
-  <head>
-    {/* Preconnects for Google Fonts */}
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossOrigin="anonymous"
-    />
-  </head>
+      <head>
+        {/* Preconnects for Google Fonts */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+      </head>
 
-  <body className="font-oswald font-sans bg-cream text-navy overflow-x-hidden">
+      <body className="font-oswald font-sans bg-cream text-navy overflow-x-hidden">
 
-    {/* Google Analytics */}
-    <Script
-      src="https://www.googletagmanager.com/gtag/js?id=G-T9GJJL0N2V"
-      strategy="afterInteractive"
-    />
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-T9GJJL0N2V"
+          strategy="afterInteractive"
+        />
 
-    <Script id="google-analytics" strategy="afterInteractive">
-      {`
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-T9GJJL0N2V');
-      `}
-    </Script>
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-T9GJJL0N2V');
+          `}
+        </Script>
 
-    {children}
+        {children}
+        <Analytics />
 
-  </body>
-</html>
+      </body>
+    </html>
   )
 }

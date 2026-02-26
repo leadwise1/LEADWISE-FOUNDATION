@@ -59,10 +59,10 @@ const Footer: React.FC = () => {
               <a href="/events" className="hover:text-peach">Events</a>
             </li>
             <li>
-              <a href="/privacy" className="hover:text-peach">Privacy Policy</a>
+              <a href="/ai-policy" className="hover:text-peach">Privacy Policy</a>
             </li>
             <li>
-              <a href="/terms" className="hover:text-peach">Terms of Service</a>
+              <a href="/user-terms" className="hover:text-peach">Terms of Service</a>
             </li>
           </ul>
         </nav>
