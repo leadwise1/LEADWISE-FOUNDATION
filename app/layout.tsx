@@ -38,7 +38,7 @@ export default function RootLayout({
     <html lang="en" dir="ltr" className={`${cinzel.variable} ${oswald.variable}`}>
       <head />
 
-      <body className="font-oswald font-sans bg-cream text-navy overflow-x-hidden">
+      <body className="font-oswald font-sans bg-cream text-navy overflow-x-hidden" suppressHydrationWarning>
 
         {/* Google Analytics */}
         <Script

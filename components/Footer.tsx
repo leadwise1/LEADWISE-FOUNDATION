@@ -136,6 +136,7 @@ const Footer: React.FC = () => {
             width={180}
             height={45}
             className="mx-auto"
+            style={{ width: 'auto', height: 'auto' }}
           />
         </a>
       </div>
