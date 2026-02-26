@@ -4,6 +4,12 @@ import React from 'react'
 import Image from 'next/image'
 
 const Hero: React.FC = () => {
+  const handleLearnMore = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    const aboutSection = document.querySelector('#about')
+    if (aboutSection) aboutSection.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
     <section
       className="bg-cream pt-32 pb-20"
@@ -15,48 +21,39 @@ const Hero: React.FC = () => {
 
           {/* Column 1: Text */}
           <div className="space-y-6 lg:space-y-8">
-            <h1 className="font-fashionista text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-navy">
-              Empowering Communities Through Free Technology Education, Career Mentorship, and Workforce Training
+            <h1 className="font-fashionista text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-navy animate-fadeInUp">
+              LeadWise Foundation: Education Gives You a Voice. Skills Give You Power!
             </h1>
 
-            <h3 className="font-oswald text-xl font-bold text-navy uppercase tracking-wide">
-              LeadWise Foundation is a 501(c)(3) nonprofit providing free digital skills training, career mentorship, and workforce development programs.
+            <h3 className="font-oswald text-xl lg:text-xl font-bold text-navy uppercase tracking-wide animate-fadeInUp">
+              As a Google Cloud & Workspace Partner, we bridge the gap between potential and opportunity.
             </h3>
 
-            <h4 className="font-oswald text-lg font-light text-navy tracking-wide">
-              We equip learners of all ages and backgrounds with practical technical skills, professional mentorship, and career confidence, helping them overcome barriers and build sustainable economic opportunities.
+            <h4 className="font-oswald text-lg font-light text-navy tracking-wide animate-fadeInUp">
+              At LeadWise, we believe education ignites empowerment. We equip individuals with the technical
+              skills and career confidence to overcome challenges and confront inequities. No age, background,
+              or circumstance limits your potential here.
             </h4>
 
-            {/* CTA Section */}
+            {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 mt-4">
               <a
-                href="https://mentors.letsleadwise.org"
-                target="_self"
+                href="https://donation.letsleadwise.org/"
+                target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Join Our Mentorship Programs"
-                className="btn-primary shadow-lg hover:shadow-xl inline-block"
+                aria-label="Donate to LeadWise Foundation"
+                className="btn-primary shadow-lg hover:shadow-xl animate-fadeInUp inline-block"
               >
-                Join Our Mentorship Programs
+                Donate
               </a>
 
               <a
-                href="https://services.letsleadwise.org"
-                target="_self"
-                rel="noopener noreferrer"
-                aria-label="Explore Free Career Training Programs"
-                className="btn-secondary shadow-lg hover:shadow-xl inline-block"
+                href="#about"
+                onClick={handleLearnMore}
+                aria-label="Learn more about LeadWise Foundation"
+                className="btn-secondary shadow-lg hover:shadow-xl animate-fadeInUp inline-block"
               >
-                Explore Free Career Training Programs
-              </a>
-
-              <a
-                href="https://donation.letsleadwise.org"
-                target="_self"
-                rel="noopener noreferrer"
-                aria-label="Donate to Support LeadWise Foundation"
-                className="text-navy underline text-sm inline-block"
-              >
-                Donate to Support LeadWise Foundation
+                Learn More
               </a>
             </div>
           </div>
@@ -65,7 +62,7 @@ const Hero: React.FC = () => {
           <div className="relative aspect-[720/600] lg:aspect-[300/600] rounded-2xl overflow-hidden shadow-xl">
             <Image
               src="/images/hero.webp"
-              alt="Students participating in technology education and mentorship program"
+              alt="Students in leadership development program, participating in collaborative activities"
               fill
               priority
               className="object-cover"
@@ -77,7 +74,7 @@ const Hero: React.FC = () => {
             <div className="relative aspect-[290/300] lg:aspect-[300/300] rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/images/hero2.webp"
-                alt="Mentor guiding student in digital skills training"
+                alt="Students collaborating in a learning environment with mentor guidance"
                 fill
                 className="object-cover"
               />
@@ -86,7 +83,7 @@ const Hero: React.FC = () => {
             <div className="relative aspect-[290/300] lg:aspect-[300/300] rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/images/hero3.webp"
-                alt="Workforce development session in progress"
+                alt="Mentorship session in progress, demonstrating guidance and support"
                 fill
                 className="object-cover"
               />
